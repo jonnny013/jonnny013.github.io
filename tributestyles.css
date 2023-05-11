@@ -47,3 +47,15 @@ body {
   
   a:hover {color: red;}
   
+  .gohomebutton {border: 0;
+    margin: 5px 0 0 20px;
+    width: 60px;
+    }
+    
+    .gohome {width: 80px;
+      font-size: 20px;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+      border: 2px solid purple
+    }
