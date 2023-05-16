@@ -49,6 +49,7 @@ html {
       order: -1;
       height: 100%;
       background-color: rgb(235, 235, 225);
+      overflow:scroll;
     }
     
     #navul {
@@ -102,3 +103,8 @@ html {
       display: block;
       margin: auto;
       text-align: center;}
+
+#last {
+  border:0;
+  height: 75px;
+}
