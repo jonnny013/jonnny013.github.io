@@ -1,3 +1,8 @@
+:root {
+    --my-gradient: linear-gradient(to right, #765D23,#D6C591, #654D21);
+    --background-color1: linear-gradient(to right, #2c230c,#372b2b, #2a2a28);
+}
+
 .gohomebutton {border: 0;
     margin: 5px 0 0 20px;
     width: 60px;
@@ -35,11 +40,12 @@
     }
 
 .nav-link {
+    color: white;
     text-decoration: none;
 }
 
 .nav-link:visited {
-    color: black;
+    color: white;
 }
 
 #header-link {
@@ -56,7 +62,7 @@
 }
 
 nav {
-     background-color: rgb(68, 186, 246);
+     background: var(--background-color1);
      width: 100%;
 }
 
@@ -76,12 +82,14 @@ footer{
     justify-content: center;
     font-size: 1.4rem;
     max-height: 50px;
-    background-color: rgb(68, 186, 246);
+    background: var(--background-color1);
+    color: white;
 }
 
 .header {
     color: white;
-    background-color: black;
+
+    background: var(--my-gradient, gold);
     margin: 0;
     width: 100%;
     text-align: center;
