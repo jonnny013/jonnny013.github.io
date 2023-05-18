@@ -89,10 +89,12 @@ footer{
     width: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 1.4rem;
     max-height: 50px;
     background: var(--background-color1);
     color: white;
+    gap: 30px;
 }
 .social-icons {
     color: linen;
@@ -113,3 +115,12 @@ footer{
   .social-icons a:visited {
     color: linen;
   }
+
+.logo {
+    position: absolute;
+    width: 75px;
+    height: auto;
+    margin: auto;
+    left: 8px;
+    top: 4px
+}
