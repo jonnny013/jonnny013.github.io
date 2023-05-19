@@ -17,6 +17,7 @@
     }
 
     html {
+        margin: 0;
         font-size: 10px;
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
     }
@@ -123,4 +124,91 @@ footer{
     margin: auto;
     left: 8px;
     top: 4px
+}
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+/*only project boxes  below */
+
+
+.all-projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+       gap: 30px;
+}
+
+.ind-projects {
+    border: 1px solid black;
+    max-width: 300px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+}
+
+.project-title {
+    text-align: center;
+    background:  var(--my-gradient);
+    align-self: flex-start;
+    width: 100%;
+    font-family:'Times New Roman', Times, serif;
+    color: black;
+    margin: 0;
+}
+
+.project-title a {
+    text-decoration: none;
+    color: black;
+}
+
+.project-title a:visited {
+    color: black;
+}
+
+.ind-projects p {
+    padding: 15px;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.7rem;
+    flex: 1;
+}
+
+.ind-projects .project-focus p {
+    font-weight: 600;
+    flex: 1;
+    margin: 0;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: auto;
+    flex: 1;
+}
+.icons i{
+    font-size: 4rem;
+}
+
+
+.html-icon, .css-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    padding: 2px;
+
+}
+
+.ind-projects .icons p {
+    padding: 0;
 }
