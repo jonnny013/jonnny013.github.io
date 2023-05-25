@@ -86,11 +86,16 @@ body {background-color: rgb(0,135,255);
         height: 0;
       }
 
-.radio {
+/*.radio {
   display: flex;
-  justify-content: left;
-  align-items: center;
-  border: 2px solid black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+*/
+.radio {
+  display: block;
+  
 }
 
 input[type="checkbox"] {
