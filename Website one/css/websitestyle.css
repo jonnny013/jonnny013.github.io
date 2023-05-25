@@ -71,6 +71,9 @@ header a:hover{
 	background: url("../img/showcase.jpg") no-repeat 0 -150px;
 	text-align:center;
 	color:orange;
+	-webkit-text-fill-color: orange;
+	-webkit-text-stroke: red;
+	-webkit-text-stroke-width: 1px;
 	font-size:30px;
 	background-size: 100%
 }
@@ -144,4 +147,30 @@ width: 60px;
 	color: white;
 	border-radius: 5px;
 	border: 2px solid purple
+}
+
+#samples {
+	margin-top: 20px;
+}
+
+#quote  h4{
+font-size: 20px;
+}
+
+.form-quote {
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	gap: 10px;
+}
+
+#quote input {
+	line-height: 50x;
+	font-size: 16px;
+	border-radius: 5px;
+}
+
+#quote input[type=submit] {
+	height: 30px;
+	width: 100px;
 }
