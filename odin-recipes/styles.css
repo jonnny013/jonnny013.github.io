@@ -1,14 +1,38 @@
-
+html {
+    height: 100vh;
+}
 
 body{background-color: lightblue;
 font-family: sans-serif;
 font-size: 22px;
+margin: 30px;
+height: auto;
+}
 
+.topPhoto { 
+    margin: auto;
+    display: block;
+    height: 300px;
+    width: auto;
+}
+
+.return {
+    text-decoration: none;
+    color: red;
+    text-align: center;
+    margin: 10%;
+    width: 100vw; 
+    height:auto;
+}
+
+.return:visited {
+    color: red;
 }
 
 .main {
     display: flex;
 flex-direction: row-reverse;
+height: 650px;
 }
 
 h1 {text-align: center;
@@ -32,10 +56,17 @@ p {font-weight: 800;}
 
 .main-list {list-style-type: none;}
 
-footer {text-align: center;
-padding-top: 100px;}
+footer {
+    position: absolute;
+text-align: center;
+height:auto;
+background-color: white;
+width: 100vw;
+margin-left: -30px;
 
-.footer{font-size: 10px; }
+}
+
+.footer{font-size:14px; }
 
 .return {font-size: 16px;}
 
@@ -60,6 +91,12 @@ padding-top: 100px;}
         gap: 20px;
         height: 180px;
     }
+
+
+.list {
+    height: 35px;
+    margin-top: 5px;
+}
 
     .main-list a {
         text-decoration: none;

@@ -79,7 +79,7 @@ html {
   
   #return {
     width: 100vw;
-    height: 30px;
+    height: 60px;
   }
   
   .top {
@@ -296,6 +296,11 @@ html {
   }
   .grid {
     flex-direction: column;
+  }
+
+  .gohomebutton {
+    position: relative;
+    margin-top: 0px;
   }
   
   }
