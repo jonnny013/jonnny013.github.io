@@ -37,7 +37,7 @@ function playerDecision() {
     }
 }
 let player = playerDecision();
-console.log(player);
+
 //Compare the two and declare a winner/loser or tie 
 
 
@@ -49,30 +49,33 @@ function chooseWinner (x, y) {
         return "It is a tie!"
     }
     else if (compDecision === "rock" && playerDecision === "paper") {
-        return "You win! Paper beats rock!"
+        return "playerwin"
     }
     else if (compDecision === "paper" && playerDecision === "rock") {
-        return "You lose! Paper beats rock!"
+        return "computerwin"
     }
     else if (compDecision === "paper" && playerDecision === "scissors") {
-        return "You win! Scissors beats paper!"
+        return "playerwin"
     }
     else if (compDecision === "scissors" && playerDecision === "paper") {
-        return "You lose! Scissors beats paper!"
+        return "computerwin"
     }
     else if (compDecision === "rock" && playerDecision === "scissors") {
-        return "You lose! Rock beats scissors!"
+        return "computerwin"
     }
     else if (compDecision === "scissors" && playerDecision === "rock") {
-        return "You win! Rock beats scissors!"
+        return "playerwin"
     }
 }
 
 function playRound() {
-let result = chooseWinner(computer, player);
-console.log(result);
-return result;
-
+let result = chooseWinner(compDecision (), playerDecision());
+if (result === "playerwin") {
+    console.log( `You win! ${playerDecision()} beats ${compDecision()}`);
+}
+else if (result === "computerwin") {
+    console.log( `You lose! ${compDecision()} beats ${playerDecision()}`);
+}
 }
 
 
@@ -81,30 +84,41 @@ return result;
 function game() {
     let userScore = 0;
     let compScore = 0;
-    for (let i = 0; i < 5; i++) {
+
+    
+
 
         playRound();
-        if (chooseWinner(computer, player) == "You win! Rock beats scissors!" || chooseWinner(computer, player) == "You win! Scissors beats paper!" || chooseWinner(computer, player) == "You win! Paper beats rock!"){
-            userScore++;
+        console.log("Computer: " + compScore );
+        console.log("Player: " + userScore);
+        if (chooseWinner(compDecision (), playerDecision()) === "playerwin"){
+             userScore++;
+
         }
-        else if (chooseWinner(computer, player) == "It is a tie!") {
-            continue;
+        else if (chooseWinner(compDecision (), playerDecision()) === "computerwin"){
+             compScore++;
         }
-        else {
-            compScore++;
+        playRound();
+        console.log("Computer: " + compScore );
+        console.log("Player: " + userScore);
+        if (chooseWinner(compDecision (), playerDecision()) === "playerwin"){
+             userScore++;
+
+        }
+        else if (chooseWinner(compDecision (), playerDecision()) === "computerwin"){
+             compScore++;
         }
     
     if (userScore < compScore ){
-        console.log("Computer wins");
+        console.log("Computer wins " + compScore + ":" + userScore);
     }
     else if (userScore > compScore) {
-        console.log("Player wins");
+        console.log("Player wins " + userScore + ":" + compScore );
     }
     else {
-        console.log("tie");
+        console.log("Tied game");
     }
     console.log("Well played");
-}
+
 }
 game();
-//validate
