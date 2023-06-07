@@ -1,11 +1,25 @@
 //player input
 function playerInput(){
-
+let input = prompt("Choose paper, scissors or rock");
+    /*while (input != "paper" || input != "scissors" || input != "rock") {
+        input = prompt("Choose paper, scissors or rock");
+    } */
+let lowerInput = input.toLowerCase();
+return lowerInput;
 }
 
 //computer input
 function computerInput(){
-
+    let choice = Math.floor(Math.random() * 3);
+    if (choice === 0) {
+        return "rock";
+    }
+    else if (choice === 1) {
+        return "paper";
+    }
+    else {
+        return "scissors";
+    }
 }
 
 //create a play function
@@ -13,24 +27,26 @@ function computerInput(){
 function play(playerInput, computerInput) {
     let player = playerInput;
     let comp = computerInput;
-    let winner = 0;
-    switch (winner) {
-        case (player === "rock" && comp === "scissors"):
-        case (player === "paper" && comp === "rock"):
-        case (player === "scissors" && comp === "paper"):
-        return "winner";
-        break;
-        case (player === "rock" && comp === "paper"):
-        case (player === "paper" && comp === "scissors"):
-        case (player === "scissors" && comp === "rock"):
-        return "loser";
-        break;
-       default:
-        return "tie";
-    }
+    
+        if ((player === "rock" && comp === "scissors") ||
+        (player === "paper" && comp === "rock") ||
+        (player === "scissors" && comp === "paper")) {
+        return "winner"; }
+      
+        else if ((player === "rock" && comp === "paper") ||
+        (player === "paper" && comp === "scissors") ||
+        (player === "scissors" && comp === "rock")) {
+        return "loser"; }
+        
+       else {
+        return "tie";}
+    
 
 }
-console.log(play("rock", "scissors"));
 //create a winning output function
+function playRound () {
+    play(playerInput(), computerInput());
 
+}
+console.log(playRound());
 //create a loop to play five rounds
