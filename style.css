@@ -131,6 +131,27 @@ h2 {
     font-size: 3rem;
 }
 
+.contactList {
+    font-size: 2rem;
+    width: 600px;
+    height: 300px;
+    display: flex;
+}
+
+.contactList ul {
+    width: 550px;
+}
+
+.contactList li {
+    padding-top: 15px;
+}
+
+.contactList span {
+justify-content: flex-end;
+align-items: flex-end;
+float: right;
+}
+
 /*only project boxes  below */
 
 
@@ -161,6 +182,7 @@ h2 {
     font-family:'Times New Roman', Times, serif;
     color: black;
     margin: 0;
+    border-radius: 8px 8px 0 0;
 }
 
 .project-title a {
@@ -199,7 +221,7 @@ h2 {
 }
 
 
-.html-icon, .css-icon {
+.html-icon, .css-icon, .js-icon {
     display: flex;
     justify-content: center;
     align-items: center;
