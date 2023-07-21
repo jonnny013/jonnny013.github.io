@@ -136,6 +136,8 @@ h2 {
     width: 600px;
     height: 300px;
     display: flex;
+    margin: auto;
+
 }
 
 .contactList ul {
