@@ -13,13 +13,13 @@
         background-color: black;
         color: white;
         border-radius: 5px;
-        border: 2px solid purple
+        border: 2px solid purple;
     }
 
     html {
         margin: 0;
         font-size: 10px;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
     body {
@@ -28,14 +28,18 @@
         min-height: 100vh;
         margin: 0;
     }
-
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
 header {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     flex: 0 1 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2.0rem;
+    font-size: 2.0rem !important;
     margin: 0;
     max-height: 200px;
     color: white;
@@ -78,7 +82,7 @@ nav {
 
 main {
     flex: 1;
-    height: 100vh;
+    height: auto;
     margin: 0;
     width: auto;
     padding: 20px;
@@ -86,7 +90,8 @@ main {
 }
 
 footer{
-    flex: 1;
+    
+    bottom: 0;
     width: auto;
     display: flex;
     justify-content: center;
@@ -123,7 +128,7 @@ footer{
     height: auto;
     margin: auto;
     left: 8px;
-    top: 4px
+    top: 10px
 }
 
 h2 {
@@ -152,6 +157,11 @@ h2 {
 justify-content: flex-end;
 align-items: flex-end;
 float: right;
+}
+
+.certificates {
+    width: auto;
+    height: auto;
 }
 
 /*only project boxes  below */
