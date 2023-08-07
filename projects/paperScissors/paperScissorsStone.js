@@ -1,7 +1,7 @@
 //Create a function to get computer choice (paper, scissors or stone)
     //create a random result using mathnumber?
 
-const options = ["rock", "paper", "scissors"]
+/*const options = ["rock", "paper", "scissors"]
 
 function compDecision (){
     let choice = Math.floor(Math.random() * 3);
