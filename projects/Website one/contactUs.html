@@ -6,14 +6,13 @@
 	<meta name="description" content="Vanilla room custom cakes">
 	<meta name="keywords" content="cake, custom, quote">
 	<meta name="author" content="jonathon love, jon love">
-	<title>Vanilla Room Bakery | Home</title>
+	<title>Vanilla Room Bakery | Contact Us</title>
 	<link rel="stylesheet" href="./css/websitestyle.css">
 </head>
 <body>
-	
 	<header>
 		<form class="gohomebutton">
-			<input type="button" value="Home" onclick="window.location.href='../index.html'" class="gohome"></form>
+			<input type="button" value="Home" onclick="window.location.href='../../index.html'" class="gohome"></form>
 		<div class="container">
 			<div id="branding">
 				<h1>Vanilla Room Bakery</h1>
@@ -47,25 +46,32 @@
 		</div>
 	</section>
 
-	<section id="boxes">
-		<div class="container">
-			<div class="box">
-				<img src="./img/img1.jpg">
-				<h3>Top Customer Service</h3>
-				<p>Here at Vanilla Bakery Room, we believe that our customers are everything. We are here to serve you to the best of our abilities.</p>
-			</div>
-			<div class="box">
-				<img src="./img/img2.jpg">
-				<h3>Custom Designs</h3>
-				<p> If you can dream it, we can make it! Send us a detailed request today and we will have a design ready within three days. </p>
-			</div>
-			<div class="box">
-				<img src="./img/img3.PNG">
-				<h3>Efficient delivery speed</h3>
-				<p>With the help of the amazing postal services, we can ship anywhere within 72 hours. Local requests can be delivered within two days!</p>
-			</div>
+
+	<section id=quote>
+		<div class="container quote">
+			<H4>Get a quote today:</H4>
+
+			<form class="form-quote" action="process.php" method="POST">
+				<label>Name</label>
+				<input type="text" name="name" placeholder="Enter Your Name">
+			
+			
+				<label>Email</label>
+				<input type="email" name="email" placeholder="Enter Your Email Here">
+				
+				
+				<label>Required Date</label>
+				<input type="date" name="Required Date">
+				
+				<label>Description</label>
+				<input type="text" name="Description" placeholder="Write a detailed description of the cake you want here.">
+				
+				<input type="submit" name="Submit" value="Submit">
+			</form>
 		</div>
 	</section>
+
+	
 
 	<footer>
 		<p>Vanilla Cake Room, Copyright &copy; 2022</p>
