@@ -7,19 +7,49 @@
     margin-top: 10px;
     z-index: 4;
     position:absolute;
-
 }
 
-.cook * {
+.robot {
+    width: 300px;
+    height: 500px;
+    margin-left: 900px;
+    margin-top: 10px;
+    z-index: 4;
+    position:absolute;
+    border: 1px solid black;
+}
+
+.cook *, .robot * {
     position: absolute;
 }
 
-.hat {
+.hat, .antenna {
 width: 40%;
 height: 10%;
 left: 28%;
 top:20%;
 }
+
+
+.antenna.ball{
+    left: 39%;
+    background: red;
+    z-index: 2;
+    top: -90%;
+    height: 25px;
+    border-radius: 50px;
+    width: 25px;
+    border: 2px solid black;
+    }
+
+.antenna.rod {
+    left: 45%;
+    background: gray;
+    z-index: 2;
+    top: -39%;
+    width:10px;
+    height: 50px;
+    }
 
 
 .hat .topright{
@@ -50,6 +80,17 @@ left: 28%;
 z-index: 1;
 }
 
+.robot .head {
+    width: 40%;
+    height: 28%;
+    background: gray;
+    border-radius: 10px;
+    top: 22%;
+    left: 28%;
+    z-index: 1;
+    border:1px solid black;
+    }
+
 .eye {
     width: 15%;
     height: 15%;
@@ -75,6 +116,8 @@ z-index: 1;
     left: 42%;
 }
 
+
+
 .mouth {
     width: 45%;
     height: 15%;
@@ -82,6 +125,12 @@ z-index: 1;
     top: 70%;
     border-radius: 50%;
     left: 25%;
+}
+
+.robot .mouth {
+    background-color: white;
+    border-radius: 10%;
+    left: 28%;
 }
 
 .smile {
@@ -102,6 +151,10 @@ z-index: 1;
     border-radius: 20%;
 }
 
+.robot .body, .robot .arms {
+    background-color: rgb(107, 105, 105);
+}
+
 .arms {
     background-color: rgb(3, 3, 130);
     width: 50%;
@@ -112,11 +165,25 @@ z-index: 1;
 
 .arms .left {
     left: -45%;
-    transform: rotate(25deg);
-   
+    transform: rotate(25deg);  
 }
 
-.arms .right {
+.robot .arms .left {
+        left: -10%;
+        top: 10%;
+        transform: rotate(30deg);
+    transform-origin: top right;
+    animation: 2s linear infinite robot;  
+    
+}
+
+.robot .arms .right {
+    left: 190%;
+    top: -5%;
+    transform: rotate(-30deg);
+}
+
+.cook .arms .right {
     left: 125%;
     top: 0%;
     transform: rotate(-30deg);
@@ -171,6 +238,23 @@ z-index: 1;
     }
   }
 
+  @keyframes robot {
+    10% {
+      transform: rotate(35deg) scaleX(1);
+
+    }
+    
+    
+    40% {
+      transform: rotate(90deg) scaleX(1);
+
+    }
+
+    90% {
+        transform: rotate(85deg);
+    }
+  }
+
   
   /* counter */
 
@@ -186,4 +270,9 @@ height: 15%;
 width: 100%;
 background-color: rgb(134, 65, 23);
 top: 90%;
+}
+
+/* weapon choices */
+.choiceImg {
+    height:100px;
 }
