@@ -18,25 +18,25 @@ startMessage.textContent = "Choose rock, paper or scissors";
 
 
 //player input
-const playerInput = '';
-console.log(playerInput)
+
+function playerInput() {
 buttonDiv.addEventListener('click', function(event){
  
     if (event.target.tagName === 'BUTTON') {
         const clickedButton = event.target;
 
         if (clickedButton === rockBtn) {
-            playerInput = "rock"
+            return "rock"
         }
         if (clickedButton === paperBtn) {
-            playerInput = "paper"
+            return "paper"
         }
         if (clickedButton === scissorsBtn) {
-            playerInput = "scissors"
+            return "scissors"
         }
     }
 });
-
+};
 
 
 //computer input
@@ -101,11 +101,14 @@ function playRound (x, y) {
 }
 
 //create a loop to play five rounds
+let scoreInfo = document.createElement('p');
+scoreBox.append(scoreInfo);
+
 function game() {
     let userScore = 0;
     let compScore = 0;
     for (let i = 0; i < 5; i++) {
-        let player = playerInput;
+        let player = playerInput();
         let computer = computerInput();
         let finish = playRound(player, computer);
 
@@ -118,7 +121,7 @@ function game() {
         else if (score == "loser") {
             compScore++;
         }
-        console.log(finish + ` Score = Computer ${compScore} and you ${userScore}`); 
+        scoreInfo.textContent += `${finish} Score = Computer ${compScore} and you ${userScore}.\n`; 
     }
     startMessage.textContent = "Game over:";
     if (compScore < userScore) {
@@ -131,4 +134,16 @@ function game() {
         winLoseMessage.textContent = "Oops...";
     }
 }
-game();
+buttonDiv.addEventListener('click', game);
+
+//reset game
+
+function resetGame() {
+    userScore = 0;
+    compScore = 0;
+    scoreInfo.textContent = "";
+    startMessage.textContent = "Choose rock, paper or scissors";
+    winLoseMessage.textContent = "";
+}
+
+resetBtn.addEventListener('click', resetGame);
