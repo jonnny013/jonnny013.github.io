@@ -153,8 +153,41 @@ z-index: 1;
 
 .robot .body, .robot .arms {
     background-color: rgb(107, 105, 105);
+    border-radius: 5%;
+}
+.robot .bodyArt {
+    height:70px;
+    width: 70%;
+    background-color: rgb(178, 231, 238);
+    z-index: 1;
+    border-radius: 10%;
+    left: 15%;
+    top: 15%;
+    border: 2px solid black;
 }
 
+.bodyArtCircle {
+    z-index: 2;
+    height: 50%;
+    width: 50%;
+    border-image: radial-gradient(red 69%, #0000 70%) 84.5%/50%;
+  clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+    top: 25%;
+    left: 25%;
+    transform: scaleX(1);
+    animation: 2s linear infinite heart;
+}
+
+/*@keyframes heart {
+    10% {
+        transform: scaleX(1);
+    }
+    
+    50% {
+        transform: scaleX(2);
+    }
+}
+*/
 .arms {
     background-color: rgb(3, 3, 130);
     width: 50%;
