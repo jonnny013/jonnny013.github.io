@@ -1,8 +1,42 @@
+//html variables
+const scoreBox = document.querySelector("#scoreBox");
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+const resetBtn = document.querySelector("#reset");
+const choiceDisplay = document.querySelector("#choiceDisplay");
+const messageBox = document.querySelector("#messageBox");
+const buttonDiv = document.querySelector("#buttonDiv");
+
+//Game message/info
+
+let startMessage = document.createElement('h4');
+let winLoseMessage = document.createElement('p')
+messageBox.append(startMessage);
+messageBox.append(winLoseMessage);
+startMessage.textContent = "Choose rock, paper or scissors";
+
+
 //player input
-function playerInput(){
-let input = prompt("Choose paper, scissors or rock");
-return input.toLowerCase();
-} 
+const playerInput = '';
+console.log(playerInput)
+buttonDiv.addEventListener('click', function(event){
+ 
+    if (event.target.tagName === 'BUTTON') {
+        const clickedButton = event.target;
+
+        if (clickedButton === rockBtn) {
+            playerInput = "rock"
+        }
+        if (clickedButton === paperBtn) {
+            playerInput = "paper"
+        }
+        if (clickedButton === scissorsBtn) {
+            playerInput = "scissors"
+        }
+    }
+});
+
 
 
 //computer input
@@ -71,7 +105,7 @@ function game() {
     let userScore = 0;
     let compScore = 0;
     for (let i = 0; i < 5; i++) {
-        let player = playerInput();
+        let player = playerInput;
         let computer = computerInput();
         let finish = playRound(player, computer);
 
@@ -86,12 +120,15 @@ function game() {
         }
         console.log(finish + ` Score = Computer ${compScore} and you ${userScore}`); 
     }
-    console.log("Game over:");
+    startMessage.textContent = "Game over:";
     if (compScore < userScore) {
-        console.log("You are the winner!");
+        winLoseMessage.textContent = "You are the winner!";
     }
     else if (compScore > userScore) {
-        console.log("You lost...");
+        winLoseMessage.textContent = "You lost...";
+    }
+    else {
+        winLoseMessage.textContent = "Oops...";
     }
 }
 game();
