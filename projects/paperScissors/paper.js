@@ -19,9 +19,8 @@ startMessage.textContent = "Choose rock, paper or scissors";
 
 //player input
 
-function playerInput() {
-buttonDiv.addEventListener('click', function(event){
- 
+function playerInput(event) {
+
     if (event.target.tagName === 'BUTTON') {
         const clickedButton = event.target;
 
@@ -35,7 +34,6 @@ buttonDiv.addEventListener('click', function(event){
             return "scissors"
         }
     }
-});
 };
 
 
@@ -104,12 +102,15 @@ function playRound (x, y) {
 let scoreInfo = document.createElement('p');
 scoreBox.append(scoreInfo);
 
+let userScore = 0;
+let compScore = 0;
+let round = 0;
+
 function game() {
-    let userScore = 0;
-    let compScore = 0;
-    for (let i = 0; i < 5; i++) {
-        let player = playerInput();
-        let computer = computerInput();
+    if (round < 5) {
+        let player = playerInput(event);
+        if (player) {
+            let computer = computerInput();
         let finish = playRound(player, computer);
 
 
@@ -121,8 +122,13 @@ function game() {
         else if (score == "loser") {
             compScore++;
         }
-        scoreInfo.textContent += `${finish} Score = Computer ${compScore} and you ${userScore}.\n`; 
+        scoreInfo.innerHTML += `${finish} Score = Computer ${compScore} and you ${userScore}.<br>`; 
+        
+        
+        round++;
+        }
     }
+    else if (round == 5) {
     startMessage.textContent = "Game over:";
     if (compScore < userScore) {
         winLoseMessage.textContent = "You are the winner!";
@@ -131,16 +137,18 @@ function game() {
         winLoseMessage.textContent = "You lost...";
     }
     else {
-        winLoseMessage.textContent = "Oops...";
+        winLoseMessage.textContent = "Oops... It's a tie!";
     }
 }
-buttonDiv.addEventListener('click', game);
+}
+buttonDiv.addEventListener('click', function(event) {game(0, 0, 0)});
 
 //reset game
 
 function resetGame() {
     userScore = 0;
     compScore = 0;
+    round = 0;
     scoreInfo.textContent = "";
     startMessage.textContent = "Choose rock, paper or scissors";
     winLoseMessage.textContent = "";
