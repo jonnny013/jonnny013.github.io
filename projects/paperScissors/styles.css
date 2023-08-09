@@ -16,7 +16,6 @@
     margin-top: 10px;
     z-index: 4;
     position:absolute;
-    border: 1px solid black;
 }
 
 .cook *, .robot * {
@@ -60,7 +59,7 @@ top: 90%;
 }
 
 .hat .body {
-border-radius: 0% 0% 10% 10%;
+border-radius: 50% 50% 10% 10%;
 left: 0%;
 height: 80%;
 background: black;
@@ -167,27 +166,31 @@ z-index: 1;
 }
 
 .bodyArtCircle {
-    z-index: 2;
+    z-index: 3;
     height: 50%;
     width: 50%;
     border-image: radial-gradient(red 69%, #0000 70%) 84.5%/50%;
   clip-path: polygon(-41% 0, 50% 91%, 141% 0);
     top: 25%;
     left: 25%;
-    transform: scaleX(1);
-    animation: 2s linear infinite heart;
+    -webkit-transform: scaleX(1);
+    -webkit-animation: 2s linear infinite heart;
 }
 
-/*@keyframes heart {
-    10% {
-        transform: scaleX(1);
+@-webkit-keyframes heart {
+    0% {
+        -webkit-transform: scale(1);
     }
     
     50% {
-        transform: scaleX(2);
+        -webkit-transform: scale(1.2);
+    }
+    
+    100% {
+        -webkit-transform: scale(1);
     }
 }
-*/
+
 .arms {
     background-color: rgb(3, 3, 130);
     width: 50%;
@@ -206,8 +209,6 @@ z-index: 1;
         top: 10%;
         transform: rotate(30deg);
     transform-origin: top right;
-    animation: 2s linear infinite robot;  
-    
 }
 
 .robot .arms .right {
@@ -221,7 +222,7 @@ z-index: 1;
     top: 0%;
     transform: rotate(-30deg);
     transform-origin: top right;
-    animation: 2s linear infinite cook;
+    
 }
 
 .hand {
@@ -233,12 +234,17 @@ z-index: 1;
     z-index: 5;
 }
 
+.robot .hand {
+    background-color: gray;
+}
+
 .pan {
-    background-color: silver;
-    border: 1px solid gray;
-    border-radius: 20%;
     transform: rotate(-60deg);
     z-index: 1;
+}
+
+.robot .pan {
+    transform: rotate(-18);
 }
 
 .pan.handle {
@@ -308,4 +314,19 @@ top: 90%;
 /* weapon choices */
 .choiceImg {
     height:100px;
+}
+
+
+/*for JS */
+
+.robotArmAnimation {
+    animation: 3s linear  robot; 
+}
+
+.playerArmAnimation {
+    animation: 3s linear  cook;
+}
+
+.clearPage {
+    visibility: hidden;
 }

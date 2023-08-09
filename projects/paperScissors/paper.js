@@ -7,6 +7,26 @@ const resetBtn = document.querySelector("#reset");
 const choiceDisplay = document.querySelector("#choiceDisplay");
 const messageBox = document.querySelector("#messageBox");
 const buttonDiv = document.querySelector("#buttonDiv");
+const playerArm = document.querySelector("#playerArm");
+const robotArm = document.querySelector("#robotArm");
+const paperImg = document.querySelector("#paperImg");
+const scissorsImg = document.querySelector("#scissorsImg");
+const stoneImg = document.querySelector("#stoneImg");
+const paperImgRobot = document.querySelector("#paperImgRobot");
+const scissorsImgRobot = document.querySelector("#scissorsImgRobot");
+const stoneImgRobot = document.querySelector("#stoneImgRobot");
+
+//clear page before game start
+function clearPage () {
+    scissorsImg.classList.add("clearPage");
+    paperImg.classList.add("clearPage");
+    stoneImg.classList.add("clearPage");
+    scissorsImgRobot.classList.add("clearPage");
+    paperImgRobot.classList.add("clearPage");
+    stoneImgRobot.classList.add("clearPage");
+    playerArm.classList.remove("playerArmAnimation");
+    robotArm.classList.remove("robotArmAnimation");
+}
 
 //Game message/info
 
@@ -17,6 +37,19 @@ messageBox.append(winLoseMessage);
 startMessage.textContent = "Choose rock, paper or scissors";
 
 
+//animation function
+
+function playerAnimation(img) {
+    img.classList.remove("clearPage");
+    playerArm.classList.add("playerArmAnimation");
+    setTimeout(clearPage, 3000);
+}
+function robotAnimation(img) {
+    img.classList.remove("clearPage");
+    robotArm.classList.add("robotArmAnimation");
+    console.log("hello")
+}
+
 //player input
 
 function playerInput(event) {
@@ -25,12 +58,15 @@ function playerInput(event) {
         const clickedButton = event.target;
 
         if (clickedButton === rockBtn) {
+            playerAnimation(stoneImg);
             return "rock"
         }
         if (clickedButton === paperBtn) {
+            playerAnimation(paperImg);
             return "paper"
         }
         if (clickedButton === scissorsBtn) {
+            playerAnimation(scissorsImg);
             return "scissors"
         }
     }
@@ -41,12 +77,15 @@ function playerInput(event) {
 function computerInput(){
     let choice = Math.floor(Math.random() * 3);
     if (choice === 0) {
+        robotAnimation(stoneImgRobot);
         return "rock";
     }
     else if (choice === 1) {
+        robotAnimation(paperImgRobot);
         return "paper";
     }
-    else {
+    else if (choice === 2){
+        robotAnimation(scissorsImgRobot);
         return "scissors";
     }
 }
@@ -56,24 +95,19 @@ function computerInput(){
     //it will take the computer input and player input and assess the winner
 function play(playerInput, computerInput) {
     let player = playerInput;
-
     let comp = computerInput;
 
-    
         if ((player === "rock" && comp === "scissors") ||
         (player === "paper" && comp === "rock") ||
         (player === "scissors" && comp === "paper")) {
-
         return "winner"; }
       
         else if ((player === "rock" && comp === "paper") ||
         (player === "paper" && comp === "scissors") ||
         (player === "scissors" && comp === "rock")) {
-
         return "loser"; }
         
        else {
-
         return "tie";}
 }
 
@@ -124,7 +158,6 @@ function game() {
         }
         scoreInfo.innerHTML += `${finish} Score = Computer ${compScore} and you ${userScore}.<br>`; 
         
-        
         round++;
         }
     }
@@ -152,6 +185,8 @@ function resetGame() {
     scoreInfo.textContent = "";
     startMessage.textContent = "Choose rock, paper or scissors";
     winLoseMessage.textContent = "";
+    clearPage();
 }
 
 resetBtn.addEventListener('click', resetGame);
+clearPage();
