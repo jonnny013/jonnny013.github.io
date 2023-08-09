@@ -17,12 +17,9 @@ const scissorsImgRobot = document.querySelector("#scissorsImgRobot");
 const stoneImgRobot = document.querySelector("#stoneImgRobot");
 const playerScoreBox = document.querySelector("#playerScoreBox");
 const robotScoreBox = document.querySelector("#robotScoreBox");
-
-const scoreBoxInfo = document.createElement('p');
-const robotScoreInfo = document.createElement('p');
-playerScoreBox.append(scoreBoxInfo);
-robotScoreBox.append(robotScoreInfo);
-
+const mouthDiv = document.querySelector("#mouthDiv");
+const eye1 = document.querySelector("#leftEye");
+const eye2 = document.querySelector("#rightEye");
 
 //clear page before game start
 function clearPage () {
@@ -34,6 +31,9 @@ function clearPage () {
     stoneImgRobot.classList.add("clearPage");
     playerArm.classList.remove("playerArmAnimation");
     robotArm.classList.remove("robotArmAnimation");
+    mouthDiv.classList.remove("bigSmile", "frown");
+    eye1.classList.remove("sadEyes", "happyEyes");
+    eye2.classList.remove("sadEyes", "happyEyes");
 }
 
 //Game message/info
@@ -50,13 +50,37 @@ startMessage.textContent = "Choose rock, paper or scissors";
 function playerAnimation(img) {
     img.classList.remove("clearPage");
     playerArm.classList.add("playerArmAnimation");
+    console.log("whyyyyy")
     setTimeout(clearPage, 3000);
+    //delayedFunction(clearPage);
 }
 function robotAnimation(img) {
     img.classList.remove("clearPage");
     robotArm.classList.add("robotArmAnimation");
-    console.log("hello")
 }
+function playerWin() {
+    eye1.classList.add("sadEyes");
+    eye2.classList.add("sadEyes");
+    mouthDiv.classList.add("bigSmile");
+}
+function playerLose() {
+    eye1.classList.add("happyEyes");
+    eye2.classList.add("happyEyes");
+    mouthDiv.classList.add("frown");
+}
+
+// buttonDiv.addEventListener('click', () => {
+//     clearTimeout(timeout); // Clear the timeout if the button is clicked
+//     clearPage(); // Call the function immediately
+//   });
+
+// function delayedFunction(callback) {
+//     // Set a timeout of 4 seconds
+//     const timeout = setTimeout(() => {
+//       callback();
+//     }, 3000); 
+//   }
+
 
 //player input
 
@@ -159,14 +183,16 @@ function game() {
         let score = play(player, computer);
 
         if (score == "winner") {
+            playerWin();
             userScore++;
         }
         else if (score == "loser") {
+            playerLose();
             compScore++;
         }
         scoreInfo.innerHTML += `${finish}.<br>`; 
         playerScoreBox.textContent = `You: ${userScore}`;
-        robotScoreBox.textContent = `Robot:${compScore}`;
+        robotScoreBox.textContent = `Robot: ${compScore}`;
         round++;
         }
     }

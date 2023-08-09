@@ -141,6 +141,8 @@ z-index: 1;
     border-radius: 50%;
 }
 
+
+
 .body {
     background-color: rgb(3, 3, 130);
     width: 40%;
@@ -343,4 +345,27 @@ top: 90%;
 
 .clearPage {
     visibility: hidden;
+}
+
+.frown {
+    bottom: -20%;
+}
+
+.bigSmile {
+    bottom: 50%;
+}
+.sadEyes {
+    border-radius: 50%;
+    background-color: gray;
+    height:100%;
+    width: 100%;
+    top: -70%;
+}
+
+.happyEyes {
+    border-radius: 50%;
+    background-color: gray;
+    height:100%;
+    width: 100%;
+    top: 70%;
 }
