@@ -20,7 +20,7 @@
     <div style="height: 50px;" id="choiceDisplay">
 
     </div>
-    <div id="scoreBox" class="text-end " style=" width:600px; margin: auto;">
+    <div id="scoreBox" class="text-center " style=" width:600px; margin: auto;">
         <div class="text-center">
             <button class="btn btn-danger btn-lg text-center" id="reset">Reset</button>
         </div>
@@ -67,7 +67,9 @@
         </div>
         </div>
         <div class="countertop"></div>
-    <div class="counter"></div>
+    <div class="counter">
+        <div class="scoreCounterBox" id="playerScoreBox"> You: 0 </div>
+    </div>
     </div>
 
 <!--Robot section-->
@@ -98,17 +100,17 @@
             
                 <div class=" arms left" id="robotArm">
                     <div class="hand">
-                        <div class="pan handle">
-                            <img src="photos/paper.png" alt="paper" class="choiceImg"id="paperImgRobot">
-                            <img src="photos/scissors.png" alt="scissors" class="choiceImg" id="scissorsImgRobot">
-                            <img src="photos/stone.png" alt="stone" class="choiceImg" id="stoneImgRobot">
-                        </div>
+                        <img src="photos/paper.png" alt="paper" class="choiceImg"id="paperImgRobot">
+                        <img src="photos/scissors.png" alt="scissors" class="choiceImg" id="scissorsImgRobot">
+                        <img src="photos/stone.png" alt="stone" class="choiceImg" id="stoneImgRobot">
                     </div>
                 </div>
             </div>
         </div>
         <div class="countertop"></div>
-        <div class="counter"></div>
+        <div class="counter">
+            <div class="scoreCounterBox" id="robotScoreBox">Robot: 0</div>
+        </div>
     </div>
     
 </body>

@@ -15,6 +15,14 @@ const stoneImg = document.querySelector("#stoneImg");
 const paperImgRobot = document.querySelector("#paperImgRobot");
 const scissorsImgRobot = document.querySelector("#scissorsImgRobot");
 const stoneImgRobot = document.querySelector("#stoneImgRobot");
+const playerScoreBox = document.querySelector("#playerScoreBox");
+const robotScoreBox = document.querySelector("#robotScoreBox");
+
+const scoreBoxInfo = document.createElement('p');
+const robotScoreInfo = document.createElement('p');
+playerScoreBox.append(scoreBoxInfo);
+robotScoreBox.append(robotScoreInfo);
+
 
 //clear page before game start
 function clearPage () {
@@ -156,8 +164,9 @@ function game() {
         else if (score == "loser") {
             compScore++;
         }
-        scoreInfo.innerHTML += `${finish} Score = Computer ${compScore} and you ${userScore}.<br>`; 
-        
+        scoreInfo.innerHTML += `${finish}.<br>`; 
+        playerScoreBox.textContent = `You: ${userScore}`;
+        robotScoreBox.textContent = `Robot:${compScore}`;
         round++;
         }
     }
@@ -176,6 +185,9 @@ function game() {
 }
 buttonDiv.addEventListener('click', function(event) {game(0, 0, 0)});
 
+//score display
+
+
 //reset game
 
 function resetGame() {
@@ -185,6 +197,8 @@ function resetGame() {
     scoreInfo.textContent = "";
     startMessage.textContent = "Choose rock, paper or scissors";
     winLoseMessage.textContent = "";
+    robotScoreBox.textContent = "Robot: 0";
+    playerScoreBox.textContent = "You: 0";
     clearPage();
 }
 
