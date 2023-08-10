@@ -26,6 +26,10 @@ const firework1 = document.querySelector("#firework1");
 const firework2 = document.querySelector("#firework2");
 const firework3 = document.querySelector("#firework3");
 
+
+
+buttonDiv.addEventListener('click', function(event) {clearPage(); game(0, 0, 0); });
+
 //clear page before game start
 function clearPage () {
     scissorsImg.classList.add("clearPage");
@@ -39,6 +43,7 @@ function clearPage () {
     mouthDiv.classList.remove("bigSmile", "frown");
     eye1.classList.remove("sadEyes", "happyEyes");
     eye2.classList.remove("sadEyes", "happyEyes");
+    console.log("1")
 }
 
 //Game message/info
@@ -53,15 +58,14 @@ startMessage.textContent = "Choose rock, paper or scissors";
 //animation function
 
 function playerAnimation(img) {
+    console.log("2")
     img.classList.remove("clearPage");
-    playerArm.classList.add("playerArmAnimation");
-    console.log("whyyyyy")
-    setTimeout(clearPage, 3000);
-    //delayedFunction(clearPage);
+    setTimeout(function(){playerArm.classList.add("playerArmAnimation")}, 100);
 }
+
 function robotAnimation(img) {
     img.classList.remove("clearPage");
-    robotArm.classList.add("robotArmAnimation");
+    setTimeout(function(){robotArm.classList.add("robotArmAnimation")}, 100);
 }
 function playerWin() {
     eye1.classList.add("sadEyes");
@@ -74,17 +78,6 @@ function playerLose() {
     mouthDiv.classList.add("frown");
 }
 
-// buttonDiv.addEventListener('click', () => {
-//     clearTimeout(timeout); // Clear the timeout if the button is clicked
-//     clearPage(); // Call the function immediately
-//   });
-
-// function delayedFunction(callback) {
-//     // Set a timeout of 4 seconds
-//     const timeout = setTimeout(() => {
-//       callback();
-//     }, 3000); 
-//   }
 
 
 //player input
@@ -201,14 +194,15 @@ function game() {
         round++;
         }
     }
-    else if (round == 5) {
+    if (round == 5) {
         arrow1.classList.remove("clearPage");
         arrow2.classList.remove("clearPage");
-        startMessage.textContent = "Game over:";
-    if (compScore < userScore) {
         firework1.classList.add("firework");
         firework2.classList.add("firework");
         firework3.classList.add("firework");
+        startMessage.textContent = "Game over:";
+    if (compScore < userScore) {
+        
         winLoseMessage.textContent = "You are the winner!";
     }
     else if (compScore > userScore) {
@@ -219,10 +213,6 @@ function game() {
     }
 }
 }
-buttonDiv.addEventListener('click', function(event) {game(0, 0, 0)});
-
-//score display
-
 
 //reset game
 
