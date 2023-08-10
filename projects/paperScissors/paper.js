@@ -20,6 +20,8 @@ const robotScoreBox = document.querySelector("#robotScoreBox");
 const mouthDiv = document.querySelector("#mouthDiv");
 const eye1 = document.querySelector("#leftEye");
 const eye2 = document.querySelector("#rightEye");
+const arrow1 = document.querySelector("#arrow1");
+const arrow2 = document.querySelector("#arrow2");
 
 //clear page before game start
 function clearPage () {
@@ -197,7 +199,9 @@ function game() {
         }
     }
     else if (round == 5) {
-    startMessage.textContent = "Game over:";
+        arrow1.classList.remove("clearPage");
+        arrow2.classList.remove("clearPage");
+        startMessage.textContent = "Game over:";
     if (compScore < userScore) {
         winLoseMessage.textContent = "You are the winner!";
     }
@@ -225,6 +229,8 @@ function resetGame() {
     winLoseMessage.textContent = "";
     robotScoreBox.textContent = "Robot: 0";
     playerScoreBox.textContent = "You: 0";
+    arrow1.classList.add("clearPage");
+    arrow2.classList.add("clearPage");
     clearPage();
 }
 
