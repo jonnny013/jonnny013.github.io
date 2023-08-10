@@ -165,9 +165,17 @@ z-index: 1;
     left: 15%;
     top: 15%;
     border: 2px solid black;
+    
 }
 
-.bodyArtCircle {
+.robot .heartDiv {
+    animation: 2s linear infinite heart;
+    z-index: 3;
+    width:100%;
+    height: 100%;
+}
+
+.robot .bodyArtCircle {
     z-index: 3;
     height: 50%;
     width: 50%;
@@ -175,21 +183,21 @@ z-index: 1;
   clip-path: polygon(-41% 0, 50% 91%, 141% 0);
     top: 25%;
     left: 25%;
-    -webkit-transform: scaleX(1);
-    -webkit-animation: 2s linear infinite heart;
 }
 
-@-webkit-keyframes heart {
+@keyframes heart {
     0% {
-        -webkit-transform: scale(1);
+        transform: scale(1);
     }
     
     50% {
-        -webkit-transform: scale(1.2);
+        transform: scale(1.4);
     }
+
+  
     
     100% {
-        -webkit-transform: scale(1);
+        transform: scale(1);
     }
 }
 
