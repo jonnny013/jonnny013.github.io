@@ -22,6 +22,9 @@ const eye1 = document.querySelector("#leftEye");
 const eye2 = document.querySelector("#rightEye");
 const arrow1 = document.querySelector("#arrow1");
 const arrow2 = document.querySelector("#arrow2");
+const firework1 = document.querySelector("#firework1");
+const firework2 = document.querySelector("#firework2");
+const firework3 = document.querySelector("#firework3");
 
 //clear page before game start
 function clearPage () {
@@ -203,6 +206,9 @@ function game() {
         arrow2.classList.remove("clearPage");
         startMessage.textContent = "Game over:";
     if (compScore < userScore) {
+        firework1.classList.add("firework");
+        firework2.classList.add("firework");
+        firework3.classList.add("firework");
         winLoseMessage.textContent = "You are the winner!";
     }
     else if (compScore > userScore) {
@@ -231,6 +237,9 @@ function resetGame() {
     playerScoreBox.textContent = "You: 0";
     arrow1.classList.add("clearPage");
     arrow2.classList.add("clearPage");
+    firework1.classList.remove("firework");
+    firework2.classList.remove("firework");
+    firework3.classList.remove("firework");
     clearPage();
 }
 
