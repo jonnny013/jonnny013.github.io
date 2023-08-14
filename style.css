@@ -217,7 +217,8 @@ float: right;
 .ind-projects .project-focus p {
     font-weight: 600;
     flex: 1;
-    margin: 0;
+    margin: auto;
+    text-align: center;
 }
 
 .icons {
@@ -227,13 +228,14 @@ float: right;
     gap: 30px;
     height: auto;
     flex: 1;
+    text-align: center;
 }
 .icons i{
     font-size: 4rem;
 }
 
 
-.html-icon, .css-icon, .js-icon {
+.html-icon, .css-icon, .js-icon, .bootstrap-icon {
     display: flex;
     justify-content: center;
     align-items: center;
