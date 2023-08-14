@@ -1,0 +1,525 @@
+/* player animation below */
+
+.cook {
+    width: 300px;
+    height: 500px;
+    margin-left: 50px;
+    margin-top: 10px;
+    z-index: 4;
+    position: absolute;
+}
+
+.robot {
+    width: 300px;
+    height: 500px;
+    margin-left: 50px;
+    margin-top: 10px;
+    z-index: 4;
+    position:absolute;
+}
+
+.cook *, .robot * {
+    position: absolute;
+}
+
+.hat, .antenna {
+width: 40%;
+height: 10%;
+left: 28%;
+top:20%;
+}
+
+
+.antenna.ball{
+    left: 39%;
+    background: red;
+    z-index: 2;
+    top: -90%;
+    height: 25px;
+    border-radius: 50px;
+    width: 25px;
+    border: 2px solid black;
+    }
+
+.antenna.rod {
+    left: 45%;
+    background: gray;
+    z-index: 2;
+    top: -39%;
+    width:10px;
+    height: 50px;
+    }
+
+
+.hat .topright{
+left: 85%;
+background: black;
+z-index: 2;
+top: 90%;
+}
+
+.hat .body {
+border-radius: 50% 50% 10% 10%;
+left: 0%;
+height: 80%;
+background: black;
+top: 20%;
+width: 100%;
+z-index: 3;
+border-top: transparent;
+}
+
+.head {
+width: 40%;
+height: 30%;
+background: #F1C27D;
+border-radius: 70% 70% 65% 65%;
+top: 22%;
+left: 28%;
+z-index: 1;
+}
+
+.robot .head {
+    width: 40%;
+    height: 28%;
+    background: gray;
+    border-radius: 10px;
+    top: 22%;
+    left: 28%;
+    z-index: 1;
+    border:1px solid black;
+    }
+
+.eye {
+    width: 15%;
+    height: 15%;
+    background-color: black;
+    top: 35%;
+    border-radius: 50%;
+  }
+  
+  .eye.left {
+    left: 25%;
+  }
+  
+  .eye.right {
+    right: 25%;
+  }
+
+.nose {
+    width: 15%;
+    height: 15%;
+    background-color: #dbb172;
+    top: 52%;
+    border-radius: 50%;
+    left: 42%;
+}
+
+
+
+.mouth {
+    width: 45%;
+    height: 15%;
+    background-color: rgb(248, 166, 197);
+    top: 70%;
+    border-radius: 50%;
+    left: 25%;
+}
+
+.robot .mouth {
+    background-color: white;
+    border-radius: 10%;
+    left: 28%;
+}
+
+.smile {
+    width: 150%;
+    height: 100%;
+    background-color: #F1C27D;
+    bottom: 25%;
+    left: -23%;
+    border-radius: 50%;
+}
+
+
+
+.body {
+    background-color: rgb(3, 3, 130);
+    width: 40%;
+    height: 30%;
+    top: 50%;
+    left: 28%;
+    border-radius: 20%;
+}
+
+.robot .body, .robot .arms {
+    background-color: rgb(107, 105, 105);
+    border-radius: 5%;
+}
+.robot .bodyArt {
+    height:70px;
+    width: 70%;
+    background-color: rgb(178, 231, 238);
+    z-index: 1;
+    border-radius: 10%;
+    left: 15%;
+    top: 15%;
+    border: 2px solid black;
+    
+}
+
+.robot .heartDiv {
+    animation: 2s linear infinite heart;
+    z-index: 3;
+    width:100%;
+    height: 100%;
+}
+
+.robot .bodyArtCircle {
+    z-index: 3;
+    height: 50%;
+    width: 50%;
+    border-image: radial-gradient(red 69%, #0000 70%) 84.5%/50%;
+  clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+    top: 25%;
+    left: 25%;
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(1);
+    }
+    
+    50% {
+        transform: scale(1.4);
+    }
+
+  
+    
+    100% {
+        transform: scale(1);
+    }
+}
+
+.arms {
+    background-color: rgb(3, 3, 130);
+    width: 50%;
+    height: 90%;
+    top: 0%;
+    border-radius: 10%;
+}
+
+.arms .left {
+    left: -45%;
+    transform: rotate(25deg);  
+}
+
+.robot .arms .left {
+        left: -10%;
+        top: 10%;
+        transform: rotate(30deg);
+    transform-origin: top right;
+}
+
+.robot .arms .right {
+    left: 190%;
+    top: -5%;
+    transform: rotate(-30deg);
+}
+
+.cook .arms .right {
+    left: 125%;
+    top: 0%;
+    transform: rotate(-30deg);
+    transform-origin: top right;
+    
+}
+
+.hand {
+    width:100%;
+    height: 30%;
+    background-color: #F1C27D;
+    border-radius: 50%;
+    top: 100%;
+    z-index: 5;
+}
+
+.robot .hand {
+    background-color: gray;
+}
+
+.pan {
+    transform: rotate(-60deg);
+    z-index: 1;
+}
+
+.robot .pan {
+    transform: rotate(-18);
+}
+
+.pan.handle {
+    width: 70%;
+    height: 300%;
+    left: 90%;
+    top: 0%;
+    z-index: 3;
+}
+
+
+
+
+
+
+@keyframes cook {
+    10% {
+      transform: rotate(-35deg) scaleX(1);
+
+    }
+    
+    
+    40% {
+      transform: rotate(-90deg) scaleX(1);
+
+    }
+
+    90% {
+        transform: rotate(-85deg);
+    }
+  }
+
+  @keyframes robot {
+    10% {
+      transform: rotate(35deg) scaleX(1);
+
+    }
+    
+    
+    40% {
+      transform: rotate(90deg) scaleX(1);
+
+    }
+
+    90% {
+        transform: rotate(85deg);
+    }
+  }
+
+  
+  /* counter */
+
+.countertop {
+width: 110%;
+height: 10%;
+background-color: rgb(63, 29, 8);
+top: 80%;
+left: -5%;
+}
+.counter {
+height: 15%;
+width: 100%;
+background-color: rgb(134, 65, 23);
+top: 90%;
+}
+
+.scoreCounterBox {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 40px;
+    top: 10%;
+    left: 36%;
+    text-align:center;
+    font-size: 25px;
+}
+.scoreCounterBox p {
+    text-align: center;
+}
+/* weapon choices */
+.choiceImg {
+    height:100px;
+    z-index: 4;
+}
+
+
+/*for JS */
+
+.robotArmAnimation {
+    animation: 3s linear  robot; 
+}
+
+.playerArmAnimation {
+    animation: 3s linear  cook;
+}
+
+.clearPage {
+    visibility: hidden;
+}
+
+.frown {
+    bottom: -20%;
+}
+
+.bigSmile {
+    bottom: 50%;
+}
+.sadEyes {
+    border-radius: 50%;
+    background-color: gray;
+    height:100%;
+    width: 100%;
+    top: -70%;
+}
+
+.happyEyes {
+    border-radius: 50%;
+    background-color: gray;
+    height:100%;
+    width: 100%;
+    top: 70%;
+}
+
+/* Ending animations. Code borrowed from https://alvaromontoro.com/blog/68002/creating-a-firework-effect-with-css*/
+@keyframes firework {
+    0% { transform: translate(var(--x), var(--initialY)); width: var(--initialSize); opacity: 1; }
+    50% { width: 0.5vmin; opacity: 1; }
+    100% { width: var(--finalSize); opacity: 0; }
+  }
+  
+  /* @keyframes fireworkPseudo {
+    0% { transform: translate(-50%, -50%); width: var(--initialSize); opacity: 1; }
+    50% { width: 0.5vmin; opacity: 1; }
+    100% { width: var(--finalSize); opacity: 0; }
+  }
+   */
+  .firework,
+  .firework::before,
+  .firework::after
+  {
+    --initialSize: 0.5vmin;
+    --finalSize: 45vmin;
+    --particleSize: 0.2vmin;
+    --color1: yellow;
+    --color2: khaki;
+    --color3: white;
+    --color4: lime;
+    --color5: gold;
+    --color6: mediumseagreen;
+    --y: -30vmin;
+    --x: -50%;
+    --initialY: 60vmin;
+    content: "";
+    animation: firework 2s infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, var(--y));
+    width: var(--initialSize);
+    aspect-ratio: 1;
+    background: 
+      /*
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 0%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 0%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 100%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 100%,
+      */
+      
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,
+      radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,
+      radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,
+      radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,
+      
+      /* bottom right */
+      radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,
+      radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,
+      radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,
+      radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,
+      radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,
+      
+      /* bottom left */
+      radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,
+      radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,
+      radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,
+      radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,
+      radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,
+      radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,
+      
+      /* top left */
+      radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,
+      radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,
+      radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,
+      radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,
+      radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,
+      radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,
+      
+      /* top right */
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%
+      ;
+    background-size: var(--initialSize) var(--initialSize);
+    background-repeat: no-repeat;
+  }
+  
+  .firework::before {
+    --x: -50%;
+    --y: -50%;
+    --initialY: -50%;
+  /*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */
+    transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);
+  /*   animation: fireworkPseudo 2s infinite; */
+  }
+  
+  .firework::after {
+    --x: -50%;
+    --y: -50%;
+    --initialY: -50%;
+  /*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */
+    transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);
+  /*   animation: fireworkPseudo 2s infinite; */
+  }
+  
+  .firework:nth-child(2) {
+    --x: 30vmin;
+  }
+  
+  .firework:nth-child(2),
+  .firework:nth-child(2)::before,
+  .firework:nth-child(2)::after {
+    --color1: pink;
+    --color2: violet;
+    --color3: fuchsia;
+    --color4: orchid;
+    --color5: plum;
+    --color6: lavender;  
+    --finalSize: 40vmin;
+    left: 30%;
+    top: 60%;
+    animation-delay: -0.25s;
+  }
+  
+  .firework:nth-child(3) {
+    --x: -30vmin;
+    --y: -50vmin;
+  }
+  
+  .firework:nth-child(3),
+  .firework:nth-child(3)::before,
+  .firework:nth-child(3)::after {
+    --color1: cyan;
+    --color2: lightcyan;
+    --color3: lightblue;
+    --color4: PaleTurquoise;
+    --color5: SkyBlue;
+    --color6: lavender;
+    --finalSize: 35vmin;
+    left: 70%;
+    top: 60%;
+    animation-delay: -0.4s;
+  }

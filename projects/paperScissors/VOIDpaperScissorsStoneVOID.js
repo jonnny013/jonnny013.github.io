@@ -1,7 +1,7 @@
-//Create a function to get computer choice (paper, scissors or stone)
-    //create a random result using mathnumber?
 
-const options = ["rock", "paper", "scissors"]
+const options = ["rock", "paper", "scissors"];
+
+
 
 function compDecision (){
     let choice = Math.floor(Math.random() * 3);
@@ -16,27 +16,36 @@ else {
     return "scissors";
 }};
 let computer = compDecision();
-console.log(computer);
+choiceDisplay.textContent = computer;
 
 //create an input for the player
     //correct for case sensitve issues
 
+let startMessage = document.createElement('h4');
+messageBox.append(startMessage);
+startMessage.textContent("Choose rock, paper or scissors");
 
-function playerDecision() {
-    let input = false;
-    while (input == false) {
-        const userInput = prompt("Choose rock, paper or scissors: "); 
-        if(userInput == null) {
-            continue;
+function playerDecision(event) {
+ 
+
+    if (event.target.tagName === 'BUTTON') {
+        const clickedButton = event.target;
+
+        if (clickedButton === rockBtn) {
+            //return "rock"
+            console.log("rock")
         }
-    inputLowerCase = userInput.toLowerCase();
-    if (options.includes(inputLowerCase)){
-        input = true;
-        return inputLowerCase;
+        if (clickedButton === paperBtn) {
+            return "paper"
+        }
+        if (clickedButton === scissorsBtn) {
+            return "scissors"
         }
     }
-}
+};
 let player = playerDecision();
+
+buttonDiv.addEventListener('click', playerDecision(e));
 
 //Compare the two and declare a winner/loser or tie 
 
