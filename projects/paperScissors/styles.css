@@ -152,6 +152,19 @@ z-index: 1;
     border-radius: 20%;
 }
 
+.shirt {
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.shirt img {
+  left: 0%;
+  height: 70%;
+  width: auto;
+  opacity: 50%;
+}
+
 .robot .body, .robot .arms {
     background-color: rgb(107, 105, 105);
     border-radius: 5%;
