@@ -3,8 +3,8 @@
 .cook {
     width: 300px;
     height: 500px;
-    margin-left: 50px;
-    margin-top: 10px;
+    margin-left: 20px;
+    margin-top: 0;
     z-index: 4;
     position: absolute;
 }
@@ -12,8 +12,8 @@
 .robot {
     width: 300px;
     height: 500px;
-    margin-left: 50px;
-    margin-top: 10px;
+    margin-left: 20px;
+    margin-top: 0;
     z-index: 4;
     position:absolute;
 }
@@ -200,6 +200,10 @@ z-index: 1;
     left: 25%;
 }
 
+#arrow1, #arrow2 {
+  animation: 2s linear infinite heart;
+}
+
 @keyframes heart {
     0% {
         transform: scale(1);
@@ -209,8 +213,6 @@ z-index: 1;
         transform: scale(1.4);
     }
 
-  
-    
     100% {
         transform: scale(1);
     }
@@ -349,6 +351,22 @@ top: 90%;
 .scoreCounterBox p {
     text-align: center;
 }
+
+@media screen and (max-width: 1000px) {
+  .cook, .robot {
+    transform: scale(.75);
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cook, .robot {
+    transform: scale(.5);
+    margin: 0;
+    position: relative;
+  }
+}
+
 /* weapon choices */
 .choiceImg {
     height:100px;
