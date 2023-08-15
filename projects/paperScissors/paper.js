@@ -235,3 +235,5 @@ function resetGame() {
 
 resetBtn.addEventListener('click', resetGame);
 clearPage();
+
+//new line
