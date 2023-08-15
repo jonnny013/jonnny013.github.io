@@ -16,13 +16,14 @@ html {
       background-color: black;
       color: white;
       border-radius: 5px;
-      border: 2px solid purple
+      border: 2px solid purple;
+      text-align: center;
     }
 
   body {
     padding: 0;
-    margin: 0;
-    display: block;
+    margin: auto;
+
   }
   
   #page-wrap{
@@ -81,7 +82,12 @@ html {
     width: 100vw;
     height: 60px;
   }
-  
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .top {
     display: flex;
       margin-top: 3px;
@@ -89,6 +95,7 @@ html {
       justify-content: center;
       flex-direction: column;
       align-items: center;
+      text-align: center;
   }
   form {
     margin-top: 30px;
@@ -141,7 +148,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-  
+    overflow: scroll;
     margin: 0;
     padding: 0;
   }
@@ -185,6 +192,7 @@ html {
     margin: auto;
     max-width: 600px;
     font-size: .8rem;
+    padding: 10px;
   }
   
   .product {
@@ -230,7 +238,8 @@ html {
   
   
   
-  @media screen and (max-width: 935px) { header h2 {
+  @media screen and (max-width: 935px) { 
+    header h2 {
     font-family: 'Apple Chancery', sans-serif;
     padding-right: 0;
     font-weight: 500;
@@ -256,40 +265,63 @@ html {
   }
 }
   
-  @media screen and (max-width: 835px) {header h2 {
+  @media screen and (max-width: 835px) {
+    header h2 {
     font-family: 'Apple Chancery', sans-serif;
     padding-right: 0;
     font-weight: 500;
     font-style: italic;
     font-size: 1rem;
-    flex:1;
-    justify-content: flex-start;
   }
   .nav-link{
   font-size: 1.2rem;
   }
   }
   
-  @media screen and (max-width: 715px) {header h2 {
-    font-family: 'Apple Chancery', sans-serif;
-    padding-right: 0;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 0.5rem;
-    flex:1;
-    justify-content: flex-start;
-  }
+  @media screen and (max-width: 715px) {
+
   header h2 {
-    font-family: 'Apple Chancery', sans-serif;
-    padding-right: 0;
-    font-weight: 500;
-    font-style: italic;
     font-size: 0.5rem;
     flex:1;
     justify-content: flex-start;
   }
   header{
   position: relative;
+  } 
+
+  .icon {
+    align-items: center;
+    text-align: center;
+    display: inline;
+  }
+
+  .nav-link{
+  font-size: 1rem;
+  }
+  .grid {
+    flex-direction: column;
+    width: auto;
+    margin: 5px;
+  }
+
+  
+
+  .gohomebutton {
+    position: relative;
+    margin-top: 0px;
+  }
+  .description {
+    width: auto;
+    text-align: center;
+  }
+  }
+
+  @media screen and (max-width: 500px) {
+
+  header{
+    flex-direction: column;
+  position: relative;
+  height: auto;
   } 
   .nav-link{
   font-size: 1rem;
@@ -300,7 +332,8 @@ html {
 
   .gohomebutton {
     position: relative;
-    margin-top: 0px;
+    margin: auto;
+    margin-top: 5px;
   }
   
   }
