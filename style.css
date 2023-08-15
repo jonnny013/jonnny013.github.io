@@ -54,30 +54,25 @@ header {
     color: white;
     text-decoration: none;
 }
-
+.col-3 {
+    width: 25%;
+}
 .nav-link:visited {
     color: white;
 }
 
 #header-link {
     font-size: 3rem;
-    display: flex;
-    justify-content: right;
     gap: 50px;
     margin: auto;
     padding: 10px;
-    margin-right: 0;
     width: auto;
-    list-style-type: none;
     
 }
 
 nav {
      background: var(--background-color1);
      width: 100%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
 }
 
 main {
@@ -104,10 +99,6 @@ footer{
 }
 .social-icons {
     color: linen;
-    display: flex;
-    align-items: flex-end;
-    justify-content: left;
-    gap: 20px;
     margin-left: 25px;
     font-size: 30px;
     }
@@ -123,12 +114,10 @@ footer{
   }
 
 .logo {
-    position: absolute;
     width: 75px;
     height: auto;
     margin: auto;
-    left: 8px;
-    top: 10px
+    margin-top: 20px;
 }
 
 h2 {
@@ -248,4 +237,10 @@ float: right;
 
 .ind-projects .icons p {
     padding: 0;
+}
+
+/*Mobile device sizing */
+
+@media only screen and (max-width: 400px) {
+
 }
