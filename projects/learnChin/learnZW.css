@@ -11,7 +11,7 @@ html {
     }
     
     .main-section {
-      margin-bottom: 100px;
+      margin-bottom: 50px;
       max-width: 90%;
     }
     
@@ -39,7 +39,7 @@ html {
       font-size: 1.3rem;
     }
     
-    @media only screen and (min-width: 600px) {#navbar {width: 200px;}} 
+   
     
     
     #navbar {
@@ -78,7 +78,7 @@ html {
       padding: 10px;
       background-color: rgb(196, 191, 191);
       margin-top: auto;
-      height: 1.5rem;
+      height: auto;
     }
     
     main {
@@ -122,3 +122,15 @@ html {
     border-radius: 5px;
     border: 2px solid purple
   }
+
+.breakPoint {
+  text-align: center;
+  background-color: aliceblue;
+}
+
+  @media only screen and (max-width: 900px) {
+    #navbar, #main-doc, .text-center, .gohomebutton{
+      position: relative;
+      margin: auto;
+    }
+  } 
