@@ -231,6 +231,8 @@ float: right;
 
 /*Mobile device sizing */
 
-@media only screen and (max-width: 400px) {
-
+@media only screen and (max-width: 480px) {
+    #header-link{
+        font-size: 1.7rem;
+    }
 }
