@@ -49,7 +49,7 @@ function clearPage () {
 //Game message/info
 
 let startMessage = document.createElement('h4');
-let winLoseMessage = document.createElement('p')
+let winLoseMessage = document.createElement('p');
 messageBox.append(startMessage);
 messageBox.append(winLoseMessage);
 startMessage.textContent = "Choose rock, paper or scissors";
