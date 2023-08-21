@@ -9,9 +9,26 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <div id="etchOutline">
-        <div id="etchContainer"></div>
+    <form class="gohomebutton" style="position:fixed;">
+        <input type="button" value="Home" onclick="window.location.href='../../index.html'" class="gohome" style="text-align: center; margin: 5px 0 0 20px; border: 0; width: 80px; font-size: 20px; background-color: black; color:white; border-radius: 5px; border: 2px solid purple;"></form>
+    <div id="pageContainer">
         
+        <div id="userInputSection">
+            
+            <div class="slidecontainer">
+                <div class="inputInfo1" style="text-align: center; height: 40px;">Choose grid size</div>
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <div id="sliderDisplay" style="text-align: center;"></div>
+              </div>
+              
+
+              <button id="resetBtn" type="button">Reset</button>
+        </div>
+
+        
+        <div id="etchOutline">
+            <div id="etchContainer"></div> 
+        </div>
     </div>
 </body>
 </html>
