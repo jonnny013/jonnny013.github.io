@@ -1,52 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import PokemonList from './PokemonList';
-import axios from 'axios';
-import Pagination from './Pagination';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import useBookSearch from './useBookSearch'
 
-function App() {
-  const [pokemon, setPokemon] = useState([])
-  const [currentPageUrl, setCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon")
-  const [nextPageUrl, setNextPageUrl] = useState()
-  const [prevPageUrl, setPrevPageUrl] = useState()
-  const [loading, setLoading] = useState(true)
+export default function App() {
+  const [query, setQuery] = useState('')
+  const [pageNumber, setPageNumber] = useState(1)
+  const {
+    books,
+    hasMore,
+    loading,
+    error
+  } = useBookSearch(query, pageNumber)
+  
 
-
-  useEffect(() => {
-    setLoading(true)
-    let cancel
-    axios.get(currentPageUrl, {
-      cancelToken: new axios.CancelToken(c => cancel = c)
-    }).then(res => {
-      
-      setLoading(false)
-      setNextPageUrl(res.data.next)
-      setPrevPageUrl(res.data.previous)
-      setPokemon(res.data.results.map(p => p.name))
-      
+  const observer = useRef()
+  const lastBookElementRef = useCallback(node => {
+    if (loading) return
+    if (observer.current) observer.current.disconnect()
+    observer.current = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && hasMore){
+        setPageNumber(prevPageNumber => prevPageNumber + 1)
+        console.log('Visible')
+      }
   })
+  if (node) observer.current.observe(node)
+    console.log(node)
+  }, [loading, hasMore])
 
-  return () => cancel
-}, [currentPageUrl])
+function handleSearch(e) {
+  setQuery(e.target.value)
+  setPageNumber(1)
+}
 
-  function gotoNextPage () {
-    setCurrentPageUrl(nextPageUrl)
-  }
-
-  function gotoPrevPage() {
-    setCurrentPageUrl(prevPageUrl)
-  }
-
-  if (loading) return "Loading..."
 
   return (
     <>
-      <PokemonList pokemon={pokemon} />
-      <Pagination 
-        gotoNextPage = {nextPageUrl ? gotoNextPage : null}
-        gotoPrevPage = {prevPageUrl ? gotoPrevPage : null}
-      />
+      <input type="text" value={query} onChange={handleSearch}></input>
+      {books.map((book, index) => {
+        if (books.length === index + 1) {
+          return <div ref={lastBookElementRef} key={book}>{book}</div>
+        }
+        else {
+          return <div key={book}>{book}</div>
+        }
+      })}
+      <div>{loading && 'Loading...'}</div>
+      <div>{error && 'Error'}</div>
     </>
-  );
+  )
 }
-
-export default App;
