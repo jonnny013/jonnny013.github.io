@@ -3,7 +3,9 @@ const container = document.querySelector("#etchContainer");
 const userInputSection = document.getElementById("userInputSection")
 const slider = document.getElementById("myRange");
 const sliderDisplay = document.getElementById("sliderDisplay");
-const resetBtn = document.getElementById("resetBtn")
+const resetBtn = document.getElementById("resetBtn");
+const colorChanger = document.getElementById("colorChanger");
+const colorDisplay = document.getElementById("colorDisplay");
 
 //slider
 sliderDisplay.innerHTML = slider.value;
@@ -25,8 +27,6 @@ let gridBox;
 let innerGridBox;
 
 function gridSize (input) {
-    console.log(input);
-
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
@@ -41,10 +41,37 @@ function gridSize (input) {
             innerGridBox.classList.add('grid', 'gridColumn')
             innerGridBox.setAttribute('id', `gridSquare[j]`)
             innerGridBox.addEventListener('mouseout', function() {
-                this.style.backgroundColor = 'black';
+                this.style.backgroundColor = setColor();
               });
         }
     }
+}
+
+colorChanger.addEventListener("change", changeColor)
+
+
+
+function changeColor () {
+    console.log(colorChanger)
+    if (colorChanger.value === "black") {
+        colorDisplay.textContent = "Colorful"
+        return colorChanger.value = "color"
+    }
+    else {
+        colorDisplay.textContent = "Black"
+        return colorChanger.value = "black"
+    }
+}
+
+const setColor = () => {
+
+    if (colorChanger.value === "black") {
+        return "black"
+    }
+    else {
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return "#" + randomColor;
+    }    
 }
 
 gridSize(sliderValue)

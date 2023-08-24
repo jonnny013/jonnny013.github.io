@@ -16,13 +16,21 @@
         <div id="userInputSection">
             
             <div class="slidecontainer">
-                <div class="inputInfo1" style="text-align: center; height: 40px;">Choose grid size</div>
+                <div class="inputInfo1" style="text-align: center;">Choose grid size</div>
                 <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                 <div id="sliderDisplay" style="text-align: center;"></div>
-              </div>
-              
+            </div>
 
-              <button id="resetBtn" type="button">Reset</button>
+            <div class="colorSwitch" style="text-align: center;">
+                <div class="inputInfo2" style="text-align: center;">Black or Colorful</div>
+                <label class="switch">
+                    <input type="checkbox" id="colorChanger" value="colorful">
+                    <span class="slider2 round"></span>
+                </label>
+                <div id="colorDisplay" style="text-align: center;">Colorful</div>
+            </div>
+            
+            <button id="resetBtn" type="button">Reset</button>
         </div>
 
         
