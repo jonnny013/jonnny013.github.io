@@ -2,53 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="surveystyle.css">
     <link rel="shortcut icon" type="image/x-icon" href="/photos/mainLogo.ico" />
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>-->
     </head>
-      <main>
-        <div class="container">
+
+    
+  <main>
+    <div class="container">
       <body>
         <form class="gohomebutton">
           <input type="button" value="Home" onclick="window.location.href='../../index.html'" class="gohome" style="margin: 5px 0 0 20px; border: 0; width: 80px; font-size: 20px; background-color: black; color:white; border-radius: 5px; border: 2px solid purple;">
         </form>
+
         <h1 id="title">Survey Form</h1>
+
         <p id="description">Thank you for taking the time to help me improve my work</p>
         <section>
-        <form id="survey-form">
+        <form id="survey-form" action="/my-handling-form-page" method="post">
           <fieldset>
-            <label id="name-label">Name
-            
-            <input id="name" type="text" class="text" placeholder="Enter your name" required></label>
-            <label id="email-label">
-            Email
-            <input id="email" type="email" class="text" placeholder="Enter your email" required></label>
-            <label id="number-label">
-            Age (optional)
-            <input id="number" type="number" class="text" placeholder="Age" min="1" max="99"></label>
+            <label id="name-label" for="name">Name</label>
+            <input id="name" type="text" class="text" placeholder="Enter your name" required>
+            <label id="email-label" for="email">Email</label>
+            <input id="email" type="email" class="text" placeholder="Enter your email" required>
+            <label id="number-label" for="number">Age (optional)</label>
+            <input id="number" type="number" class="text" placeholder="Age" min="1" max="99">
             <div></div>
             <label for="dropdown">Which option describes you?</label>
             <div></div>
             <select id="dropdown" class="dropdown" name="dropdown">
               <option value="" selected>(Choose one)</option>
-            <option value="student" >Student</option>
-            <option value="working">Working</option>
-            <option value="parent">Parent</option>
-            <option value="unemployed">Unemployed</option>
-  </select>
-  </fieldset>
-  <fieldset>
-  <label class="radio">What do you think of my work?</label>
-  <input class="inline" id="amazing" type="radio" name="radio-button" value="amazing" checked class="radio-button">Amazing</input>
-  <input id="superb" type="radio" name="radio-button" value="superb" class="inline">Superb</input></label>
-  </fieldset>
-  <fieldset >
-  <label class="checkbox"for="more">What would you like to see more of? (Check all that apply)
-  <input id="me"  type="checkbox" name="more" value="me" class="inline check" checked>Me</input>
-  <input class="inline check" id="my-work" type="checkbox" value="my-work" name="more">My work</input>
-  <input class="inline check" id="my-kids" type="checkbox" value="my-kids" name="more">My kids</input></label>
-  </fieldset>
+              <option value="student" >Student</option>
+              <option value="working">Working</option>
+              <option value="parent">Parent</option>
+              <option value="unemployed">Unemployed</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <label class="radio">What do you think of my work?</label>
+            <input class="inline" id="amazing" type="radio" name="radio-button" value="amazing" checked class="radio-button">Amazing</input>
+            <input id="superb" type="radio" name="radio-button" value="superb" class="inline">Superb</input>
+          </fieldset>
+
+            <fieldset >
+              <label class="checkbox"for="more">What would you like to see more of? (Check all that apply)</label>
+              <input id="me"  type="checkbox" name="more" value="me" class="inline check" checked>Me</input>
+              <input class="inline check" id="my-work" type="checkbox" value="my-work" name="more">My work</input>
+              <input class="inline check" id="my-kids" type="checkbox" value="my-kids" name="more">My kids</input>
+            </fieldset>
+
   <fieldset>
   <legend> Comments</legend>
   <textarea id="comments" value="comments" class="text" placeholder="Write any comments here (optional)"></textarea>
