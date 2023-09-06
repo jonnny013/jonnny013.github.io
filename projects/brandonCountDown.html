@@ -14,6 +14,7 @@
     <div id="hours"></div>
     <div id="mins"></div>
     <div id="seconds"></div>
+    <p id="movingtime"></p>
     <script>
         const days = document.getElementById("time")
         const hours = document.getElementById("hours")
@@ -24,6 +25,22 @@
         let difference = tommy.getTime() - today.getTime();
 
         
+
+
+        let x = setInterval(() => {
+            let today = new Date().getTime();
+        let tommy = new Date('5/31/2039').getTime()
+        let difference = tommy - today;
+
+            let days2 = Math.floor(difference / (1000* 3600 * 24))
+        let hours2 = Math.floor((difference % (1000* 3600 * 24)) / (1000 * 3600));
+        let mins2 = Math.floor((difference %(1000* 60 * 60)) / (1000 * 60));
+        let secs2 = Math.floor((difference % (1000 * 60))/ 1000)
+
+        document.getElementById("movingtime").innerHTML = days2 + "d " + hours2 + "h " + mins2 +"m " +secs2 + "s ";
+
+
+        }, 1000);
     
         let totaldays = Math.ceil(difference / (1000* 3600 * 24))
         let totalhours = Math.ceil(difference / (1000* 3600))
