@@ -57,9 +57,11 @@ const Button = (props) => {
      }
     return (
       <div className="dropdown">
-        <button onClick={handleOpen}>{props.text}</button>
+        <button onMouseLeave={handleMouseLeave} onClick={handleOpen}>
+          {props.text}
+        </button>
         {open && (
-          <div onMouseLeave={handleMouseLeave}>
+          <div>
             <ul className="menu">
               <li className="menuItem">{props.menu1}</li>
               <li className="menuItem">{props.menu2}</li>
