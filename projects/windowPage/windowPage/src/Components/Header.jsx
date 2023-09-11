@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./Header.css"
+import "./Header.css";
 
-
-function Header() {
+function Header(props) {
   const [date, setDate] = useState(new Date().toLocaleTimeString());
   useEffect(() => {
     document.title = date;
@@ -15,7 +14,9 @@ function Header() {
     setDate(new Date().toLocaleTimeString());
   };
 
- 
+  const handleOnClick = () => {
+    console.log("success")
+  }
 
   return (
     <div className="headerDiv">
@@ -23,8 +24,11 @@ function Header() {
         text="File"
         classname="headerButton"
         menu1="Save"
-        menu2="New Folder"
-        menu3="New File"
+        menu2="New File"
+        menu3="New Folder"
+        click1={props.newFile}
+        click2={props.newFile}
+        click3={props.newFolder}
       />
       <Button
         text="Edit"
@@ -45,40 +49,45 @@ function Header() {
   );
 }
 
-
 const Button = (props) => {
-     const [open, setOpen] = useState(false);
-     const handleOpen = () => {
-       setOpen(!open);
-     };
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(!open);
+  };
 
-     const handleMouseLeave = () => {
-        setOpen(false)
-     }
-    return (
-      <div className="dropdown">
-        <ul className="mainBtn" onMouseLeave={handleMouseLeave}>
-          <li>
-            <button className="barBtn" onClick={handleOpen}>
-              {props.text}
-            </button>
-          </li>
-          {open && (
-            <div className="menu">
-              <li className="menuItem">
-                <button className="menuBtn">{props.menu1}</button>
-              </li>
-              <li className="menuItem">
-                <button className="menuBtn">{props.menu2}</button>
-              </li>
-              <li className="menuItem">
-                <button className="menuBtn">{props.menu3}</button>
-              </li>
-            </div>
-          )}
-        </ul>
-      </div>
-    );
-}
+  const handleMouseLeave = () => {
+    setOpen(false);
+  };
+  return (
+    <div className="dropdown">
+      <ul className="mainBtn" onMouseLeave={handleMouseLeave}>
+        <li>
+          <button className="barBtn" onClick={handleOpen}>
+            {props.text}
+          </button>
+        </li>
+        {open && (
+          <div className="menu">
+            <li className="menuItem">
+              <button className="menuBtn" onClick={props.click1}>
+                {props.menu1}
+              </button>
+            </li>
+            <li className="menuItem">
+              <button className="menuBtn" onClick={props.click2}>
+                {props.menu2}
+              </button>
+            </li>
+            <li className="menuItem">
+              <button className="menuBtn" onClick={props.click3}>
+                {props.menu3}
+              </button>
+            </li>
+          </div>
+        )}
+      </ul>
+    </div>
+  );
+};
 
 export default Header;

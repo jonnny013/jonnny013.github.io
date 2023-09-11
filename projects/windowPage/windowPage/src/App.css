@@ -3,4 +3,39 @@
     background-color: rgb(133, 58, 4);
     position: relative;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+
+.file {
+   color: white;
+    font-size: 70px;
+    margin: 2px;
+}
+
+
+.fileName {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 2px;
+}
+
+.fileContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    justify-content: center;
+    width: fit-content;
+    height:fit-content;
+    align-items: center;
+    position: relative;
+    cursor:pointer;
+}
+
+#folder {
+    color: rgb(0, 136, 255);
 }
