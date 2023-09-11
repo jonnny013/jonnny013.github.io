@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import "./Header.css"
 
 
 function Header() {
@@ -57,18 +57,26 @@ const Button = (props) => {
      }
     return (
       <div className="dropdown">
-        <button onMouseLeave={handleMouseLeave} onClick={handleOpen}>
-          {props.text}
-        </button>
-        {open && (
-          <div>
-            <ul className="menu">
-              <li className="menuItem">{props.menu1}</li>
-              <li className="menuItem">{props.menu2}</li>
-              <li className="menuItem">{props.menu3}</li>
-            </ul>
-          </div>
-        )}
+        <ul className="mainBtn" onMouseLeave={handleMouseLeave}>
+          <li>
+            <button className="barBtn" onClick={handleOpen}>
+              {props.text}
+            </button>
+          </li>
+          {open && (
+            <div className="menu">
+              <li className="menuItem">
+                <button className="menuBtn">{props.menu1}</button>
+              </li>
+              <li className="menuItem">
+                <button className="menuBtn">{props.menu2}</button>
+              </li>
+              <li className="menuItem">
+                <button className="menuBtn">{props.menu3}</button>
+              </li>
+            </div>
+          )}
+        </ul>
       </div>
     );
 }
