@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    justify-content: center;
+    width: fit-content;
+    height:fit-content;
+    align-items: center;
+    position: absolute;
+    cursor:pointer;
+}
+
+.trashCan, .trashName {
+    margin: 2px;
+}
+
+.trashCan {
+    font-size: 70px;
+    color: rgba(48, 221, 247, 0.598);
+}
+
+.trashName {
+    font-size: 20px;
+    font-weight: 600;
+}

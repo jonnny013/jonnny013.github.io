@@ -1,0 +1,6 @@
+.wholePageDiv {
+    height: 100vw;
+    background-color: rgb(133, 58, 4);
+    position: relative;
+    width: 100%;
+}
