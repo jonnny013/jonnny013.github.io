@@ -14,20 +14,23 @@ const [folder, setFolder] = useState([]);
 
 
 const handleAddNew = (base, setBase) => {
-const newFileItem = 
+  const innerFunction = () => {
+    const newFileItem = 
   {
   id: base.length + 1,
   number: base.length + 1
 }
 const newFile = [...base, newFileItem]
 setBase(newFile)
+  }
+  return innerFunction
 }
 
   return (
     <>
       <Header
-        newFile={() => handleAddNew(file, setFile)}
-        newFolder={() => handleAddNew(folder, setFolder)}
+        newFile={handleAddNew(file, setFile)}
+        newFolder={handleAddNew(folder, setFolder)}
       />
       <div className="wholePageDiv">
         {file.map((x) => (
