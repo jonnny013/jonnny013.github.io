@@ -28,7 +28,7 @@ function Header(props) {
         menu1="Save"
         menu2="New File"
         menu3="New Folder"
-        click1={props.newFile}
+        click1={() => console.log("saved")}
         click2={props.newFile}
         click3={props.newFolder}
       />
