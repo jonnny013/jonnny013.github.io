@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
+import Button from './Button'
+import SeachBar from "./SeachBar";
 
 function Header(props) {
   const [date, setDate] = useState(new Date().toLocaleTimeString());
@@ -44,50 +46,15 @@ function Header(props) {
         menu2="Zoom Out"
         menu3="Night View"
       />
+      <SeachBar />
       <p className="headerDirectory clock">{date}</p>
     </div>
   );
 }
 
-const Button = (props) => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(!open);
-  };
 
-  const handleMouseLeave = () => {
-    setOpen(false);
-  };
-  return (
-    <div className="dropdown">
-      <ul className="mainBtn" onMouseLeave={handleMouseLeave}>
-        <li>
-          <button className="barBtn" onClick={handleOpen}>
-            {props.text}
-          </button>
-        </li>
-        {open && (
-          <div className="menu">
-            <li className="menuItem">
-              <button className="menuBtn" onClick={props.click1}>
-                {props.menu1}
-              </button>
-            </li>
-            <li className="menuItem">
-              <button className="menuBtn" onClick={props.click2}>
-                {props.menu2}
-              </button>
-            </li>
-            <li className="menuItem">
-              <button className="menuBtn" onClick={props.click3}>
-                {props.menu3}
-              </button>
-            </li>
-          </div>
-        )}
-      </ul>
-    </div>
-  );
-};
+
+
+
 
 export default Header;

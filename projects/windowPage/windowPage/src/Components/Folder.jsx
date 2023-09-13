@@ -4,7 +4,7 @@ import { faFolder } from "@fortawesome/free-solid-svg-icons";
 
 const Folder = ({number}) => {
   return (
-    <div className="fileContainer gridItem">
+    <div className="fileContainer gridItem" draggable>
       <FontAwesomeIcon icon={faFolder} className="file" id="folder" />
       <p className="fileName">Folder{number}</p>
     </div>

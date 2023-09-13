@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './Components/Header'
+import Header from './Components/Header/Header'
 import Trash from './Components/Trash'
 import { Draggable, Droppable } from "react-drag-and-drop";
 import File from './Components/File';
@@ -13,8 +13,7 @@ const [file, setFile] = useState([]);
 const [folder, setFolder] = useState([]);
 
 
-const handleAddNew = (base, setBase) => {
-  const innerFunction = () => {
+const handleAddNew = (base, setBase) =>  () => {
     const newFileItem = 
   {
   id: base.length + 1,
@@ -23,8 +22,7 @@ const handleAddNew = (base, setBase) => {
 const newFile = [...base, newFileItem]
 setBase(newFile)
   }
-  return innerFunction
-}
+ 
 
   return (
     <>
