@@ -1,0 +1,59 @@
+.mainBody {
+  position:relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.pageOne {
+background-image: url(../photos/tenSuns.jpeg);
+}
+
+.welcomePage {
+    background-image: url(../photos/welcomePage.webp);
+}
+
+h1 {
+    position: relative;
+    padding: 5px;
+    border-radius: 10px;
+    width:fit-content;
+    margin:auto;
+        font-size: 60px;
+}
+
+.welcomeH1 {
+    color: white;
+    background-color: rgb(5, 5, 105);
+        top: 10%;
+}
+
+
+
+.button {
+    position: fixed;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.welcomeBtn {
+    background-color: orange;
+    top:40%;
+    left: 10%;
+}
+
+
+
+.button button {
+    background: initial;
+  border: initial;
+    font-size: 25px;
+    cursor: pointer;
+}
