@@ -6,6 +6,8 @@ import PageOne from "./Components/PageOne/PageOne";
 import PageTwo from "./Components/PageTwo/PageTwo";
 import PageThree from "./Components/PageThree/PageThree";
 import PageFour from "./Components/PageFour/PageFour";
+import PageFive from "./Components/PageFive/PageFive";
+import { useState, useEffect } from "react";
 
 const App = () => {
   return (
@@ -17,6 +19,7 @@ const App = () => {
           <Link to="/gamePage2"> Page2 </Link>
           <Link to="/gamePage3"> Page3 </Link>
           <Link to="/gamePage4"> Page4 </Link>
+          <Link to="/gamePage5"> Page5 </Link>
         </div>
 
         <Routes>
@@ -25,6 +28,7 @@ const App = () => {
           <Route path="/gamePage2" element={<PageTwo />} />
           <Route path="/gamePage3" element={<PageThree />} />
           <Route path="/gamePage4" element={<PageFour />} />
+          <Route path="/gamePage5" element={<PageFive />} />
         </Routes>
       </Router>
     </>
