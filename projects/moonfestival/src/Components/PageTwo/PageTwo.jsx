@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import "./PageOne.css";
-import { Link } from "react-router-dom";
-import Button from "./Button";
+import React from "react";
+import "../PageOne/PageOne.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Button from "../PageOne/Button";
 
-const PageOne = () => {
+const PageTwo = () => {
   const [answer, setAnswer] = useState("");
   const [text, setText] = useState("");
 
@@ -31,48 +32,47 @@ const PageOne = () => {
 
 
   const handleClick = (num) => {
-    console.log(num)
     setAnswer(num);
   };
-
   const handleCorrectAnswer = () => {
     setAnswer("correct");
   };
 
   return (
-    <div className="mainBody pageOne">
-      <h1 className="pageOneH1">How many suns were in the sky?</h1>
+    <div className="mainBody pageTwo">
+      <h1 className="pageOneH1">What is this man's name?</h1>
 
       <Button
-        class="button pageBtn1"
-        text="1"
+        class="button  pageBtn1"
+        text="Chang'E"
         handleClick={() => handleClick("1")}
         answer={answer}
         answerText={text}
       />
       <Button
         class="button pageBtn2"
-        text="2"
-        handleClick={() => handleClick("2")}
+        text="Hou Yi"
+        handleClick={handleCorrectAnswer}
         answer={answer}
         answerText={text}
       />
       <Button
         class="button pageBtn3"
-        text="5"
-        handleClick={() => handleClick("3")}
+        text="Feng Meng"
+        handleClick={() => handleClick("2")}
         answer={answer}
         answerText={text}
       />
       <Button
         class="button pageBtn4"
-        text="10"
-        handleClick={handleCorrectAnswer}
+        text="Queen Mother"
+        handleClick={() => handleClick("3")}
+        answer={answer}
         answerText={text}
       />
       <Button
         class="button pageBtn5"
-        text="11"
+        text="Moon"
         handleClick={() => handleClick("4")}
         answer={answer}
         answerText={text}
@@ -81,4 +81,4 @@ const PageOne = () => {
   );
 };
 
-export default PageOne;
+export default PageTwo;
