@@ -29,9 +29,8 @@ const PageOne = () => {
     }
   }, [answer]);
 
-
   const handleClick = (num) => {
-    console.log(num)
+    console.log(num);
     setAnswer(num);
   };
 
@@ -49,6 +48,7 @@ const PageOne = () => {
         handleClick={() => handleClick("1")}
         answer={answer}
         answerText={text}
+        link="/gamePage2"
       />
       <Button
         class="button pageBtn2"
@@ -56,6 +56,7 @@ const PageOne = () => {
         handleClick={() => handleClick("2")}
         answer={answer}
         answerText={text}
+        link="/gamePage2"
       />
       <Button
         class="button pageBtn3"
@@ -63,12 +64,14 @@ const PageOne = () => {
         handleClick={() => handleClick("3")}
         answer={answer}
         answerText={text}
+        link="/gamePage2"
       />
       <Button
         class="button pageBtn4"
         text="10"
         handleClick={handleCorrectAnswer}
         answerText={text}
+        link="/gamePage2"
       />
       <Button
         class="button pageBtn5"
@@ -76,6 +79,7 @@ const PageOne = () => {
         handleClick={() => handleClick("4")}
         answer={answer}
         answerText={text}
+        link="/gamePage2"
       />
     </div>
   );

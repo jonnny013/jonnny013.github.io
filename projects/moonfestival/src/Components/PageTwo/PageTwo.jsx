@@ -48,6 +48,7 @@ const PageTwo = () => {
         handleClick={() => handleClick("1")}
         answer={answer}
         answerText={text}
+        link="/gamePage3"
       />
       <Button
         class="button pageBtn2"
@@ -55,6 +56,7 @@ const PageTwo = () => {
         handleClick={handleCorrectAnswer}
         answer={answer}
         answerText={text}
+        link="/gamePage3"
       />
       <Button
         class="button pageBtn3"
@@ -62,6 +64,7 @@ const PageTwo = () => {
         handleClick={() => handleClick("2")}
         answer={answer}
         answerText={text}
+        link="/gamePage3"
       />
       <Button
         class="button pageBtn4"
@@ -69,6 +72,7 @@ const PageTwo = () => {
         handleClick={() => handleClick("3")}
         answer={answer}
         answerText={text}
+        link="/gamePage3"
       />
       <Button
         class="button pageBtn5"
@@ -76,6 +80,7 @@ const PageTwo = () => {
         handleClick={() => handleClick("4")}
         answer={answer}
         answerText={text}
+        link="/gamePage3"
       />
     </div>
   );

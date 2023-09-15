@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 
@@ -12,7 +12,7 @@ const Button = (props) => {
         </div>
       )}
       {props.answer === "correct" && (
-        <Link to="/gamePage2">
+        <Link to={`${props.link}` }>
           <div className="correct answer">
             <h2 className="correctH2">Great! You got it.</h2>
             <p className="correctH2">Next question...</p>
