@@ -1,0 +1,29 @@
+.allButton {
+    width: 450px;
+     background-color: yellow;
+}
+
+.buttonOne {
+        top: 30%;
+    left: 0%;
+}
+
+.buttonTwo {
+        top: 45%;
+    left: 10%;
+}
+
+.buttonThree {
+    top: 55%;
+    left: 35%;
+}
+
+.buttonFour {
+    top: 45%;
+    left: 60%;
+}
+
+.buttonFive {
+    top: 30%;
+    left: 70%
+}

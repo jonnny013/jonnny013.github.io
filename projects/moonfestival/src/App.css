@@ -29,6 +29,10 @@ background-image: url(../photos/HouYi.jpeg);
     background-image: url(../photos/elixer.jpeg);
 }
 
+.pageFour {
+    background-image: url(../photos/moon.jpeg);
+}
+
 h1 {
     position: relative;
     padding: 5px;

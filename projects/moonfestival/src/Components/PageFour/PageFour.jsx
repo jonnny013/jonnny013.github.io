@@ -3,8 +3,9 @@ import "../PageOne/PageOne.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Button from "../PageOne/Button";
+import "./PageFour.css"
 
-const PageThree = () => {
+const PageFour = () => {
   const [answer, setAnswer] = useState("");
   const [text, setText] = useState("");
 
@@ -38,51 +39,53 @@ const PageThree = () => {
   };
 
   return (
-    <div className="mainBody pageThree">
-      <h1 className="pageOneH1">Who drank the elixir?</h1>
+    <div className="mainBody pageFour">
+      <h1 className="pageOneH1">
+        What happened to Chang'e after drinking the elixir?
+      </h1>
 
       <Button
-        class="button  pageBtn1"
-        text="Chang'E"
-        handleClick={handleCorrectAnswer}
+        class="button  buttonOne allButton"
+        text="She died."
+        handleClick={() => handleClick("4")}
         answer={answer}
         answerText={text}
         link="/gamePage4"
       />
       <Button
-        class="button pageBtn2"
-        text="Hou Yi"
+        class="button buttonTwo allButton"
+        text="She became a rabbit."
         handleClick={() => handleClick("1")}
         answer={answer}
         answerText={text}
         link="/gamePage4"
       />
       <Button
-        class="button pageBtn3"
-        text="Feng Meng"
+        class="button buttonThree allButton"
+        text="She lived forever."
         handleClick={() => handleClick("2")}
         answer={answer}
         answerText={text}
         link="/gamePage4"
       />
       <Button
-        class="button pageBtn4"
-        text="Queen Mother"
+        class="button buttonFour allButton"
+        text="She could fly."
         handleClick={() => handleClick("3")}
         answer={answer}
         answerText={text}
         link="/gamePage4"
       />
       <Button
-        class="button pageBtn5"
-        text="Rabbit"
-        handleClick={() => handleClick("4")}
+        class="button buttonFive allButton"
+        text="She flew to the moon."
+        handleClick={handleCorrectAnswer}
         answer={answer}
         answerText={text}
-        link="/gamePage4"
+        link="/gamePage5"
       />
     </div>
   );
 };
 
-export default PageThree;
+export default PageFour;
