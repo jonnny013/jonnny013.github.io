@@ -10,6 +10,39 @@ import PageFive from "./Components/PageFive/PageFive";
 import { useState, useEffect } from "react";
 
 const App = () => {
+  const [answer, setAnswer] = useState("");
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+    switch (answer) {
+      case "1":
+        setText("No!");
+        break;
+      case "2":
+        setText("Try again!");
+        break;
+      case "3":
+        setText("Sorry!");
+        break;
+      case "4":
+        setText("Nope!");
+        break;
+      case "correct":
+        setText("");
+        break;
+      default:
+        setText("");
+    }
+  }, [answer]);
+
+  const handleClick = (num) => {
+    setAnswer(num);
+  };
+  const handleCorrectAnswer = () => {
+    setAnswer("correct");
+  };
+
+
   return (
     <>
       <Router>
@@ -23,12 +56,62 @@ const App = () => {
         </div>
 
         <Routes>
-          <Route path="/gamePage1" element={<PageOne />} />
+          <Route
+            path="/gamePage1"
+            element={
+              <PageOne
+                answer={answer}
+                text={text}
+                handleClick={handleClick}
+                handleCorrectAnswer={handleCorrectAnswer}
+              />
+            }
+          />
           <Route path="/" element={<WelcomePage />} />
-          <Route path="/gamePage2" element={<PageTwo />} />
-          <Route path="/gamePage3" element={<PageThree />} />
-          <Route path="/gamePage4" element={<PageFour />} />
-          <Route path="/gamePage5" element={<PageFive />} />
+          <Route
+            path="/gamePage2"
+            element={
+              <PageTwo
+                answer={answer}
+                text={text}
+                handleClick={handleClick}
+                handleCorrectAnswer={handleCorrectAnswer}
+              />
+            }
+          />
+          <Route
+            path="/gamePage3"
+            element={
+              <PageThree
+                answer={answer}
+                text={text}
+                handleClick={handleClick}
+                handleCorrectAnswer={handleCorrectAnswer}
+              />
+            }
+          />
+          <Route
+            path="/gamePage4"
+            element={
+              <PageFour
+                answer={answer}
+                text={text}
+                handleClick={handleClick}
+                handleCorrectAnswer={handleCorrectAnswer}
+              />
+            }
+          />
+          <Route
+            path="/gamePage5"
+            element={
+              <PageFive
+                answer={answer}
+                text={text}
+                handleClick={handleClick}
+                handleCorrectAnswer={handleCorrectAnswer}
+              />
+            }
+          />
         </Routes>
       </Router>
     </>

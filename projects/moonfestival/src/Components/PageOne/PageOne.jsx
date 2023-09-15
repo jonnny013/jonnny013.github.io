@@ -1,43 +1,7 @@
-import React, { useState, useEffect } from "react";
 import "./PageOne.css";
-import { Link } from "react-router-dom";
 import Button from "./Button";
 
-const PageOne = () => {
-  const [answer, setAnswer] = useState("");
-  const [text, setText] = useState("");
-
-  useEffect(() => {
-    switch (answer) {
-      case "1":
-        setText("No!");
-        break;
-      case "2":
-        setText("Try again!");
-        break;
-      case "3":
-        setText("Sorry!");
-        break;
-      case "4":
-        setText("Nope!");
-        break;
-      case "correct":
-        setText("");
-        break;
-      default:
-        setText("");
-    }
-  }, [answer]);
-
-  const handleClick = (num) => {
-    console.log(num);
-    setAnswer(num);
-  };
-
-  const handleCorrectAnswer = () => {
-    setAnswer("correct");
-  };
-
+const PageOne = ({ answer, text, handleClick, handleCorrectAnswer }) => {
   return (
     <div className="mainBody pageOne">
       <h1 className="pageOneH1">How many suns were in the sky?</h1>

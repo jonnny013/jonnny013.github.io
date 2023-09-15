@@ -1,43 +1,8 @@
 import React from "react";
 import "../PageOne/PageOne.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import Button from "../PageOne/Button";
 
-const PageTwo = () => {
-  const [answer, setAnswer] = useState("");
-  const [text, setText] = useState("");
-
-  useEffect(() => {
-    switch (answer) {
-      case "1":
-        setText("No!");
-        break;
-      case "2":
-        setText("Try again!");
-        break;
-      case "3":
-        setText("Sorry!");
-        break;
-      case "4":
-        setText("Nope!");
-        break;
-      case "correct":
-        setText("");
-        break;
-      default:
-        setText("");
-    }
-  }, [answer]);
-
-
-  const handleClick = (num) => {
-    setAnswer(num);
-  };
-  const handleCorrectAnswer = () => {
-    setAnswer("correct");
-  };
-
+const PageTwo = ({ answer, text, handleClick, handleCorrectAnswer }) => {
   return (
     <div className="mainBody pageTwo">
       <h1 className="pageOneH1">What is this man's name?</h1>

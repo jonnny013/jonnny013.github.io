@@ -1,42 +1,10 @@
 import React from "react";
 import "../PageOne/PageOne.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import Button from "../PageOne/Button";
 import "../PageFour/PageFour.css";
 
-const PageFive = () => {
-  const [answer, setAnswer] = useState("");
-  const [text, setText] = useState("");
-
-  useEffect(() => {
-    switch (answer) {
-      case "1":
-        setText("No!");
-        break;
-      case "2":
-        setText("Try again!");
-        break;
-      case "3":
-        setText("Sorry!");
-        break;
-      case "4":
-        setText("Nope!");
-        break;
-      case "correct":
-        setText("");
-        break;
-      default:
-        setText("");
-    }
-  }, [answer]);
-
-  const handleClick = (num) => {
-    setAnswer(num);
-  };
-  const handleCorrectAnswer = () => {
-    setAnswer("correct");
-  };
+const PageFive = ({answer, text, handleClick, handleCorrectAnswer}) => {
+  
 
   return (
     <div className="mainBody pageFive">
@@ -50,7 +18,7 @@ const PageFive = () => {
         handleClick={() => handleClick("4")}
         answer={answer}
         answerText={text}
-        link="/gamePage4"
+        link="/gamePage6"
       />
       <Button
         class="button buttonTwo allButton"
@@ -58,7 +26,7 @@ const PageFive = () => {
         handleClick={() => handleClick("1")}
         answer={answer}
         answerText={text}
-        link="/gamePage4"
+        link="/gamePage6"
       />
       <Button
         class="button buttonThree allButton"
@@ -66,7 +34,7 @@ const PageFive = () => {
         handleClick={handleCorrectAnswer}
         answer={answer}
         answerText={text}
-        link="/gamePage4"
+        link="/gamePage6"
       />
       <Button
         class="button buttonFour allButton"
@@ -74,7 +42,7 @@ const PageFive = () => {
         handleClick={() => handleClick("3")}
         answer={answer}
         answerText={text}
-        link="/gamePage4"
+        link="/gamePage6"
       />
       <Button
         class="button buttonFive allButton"
@@ -82,7 +50,7 @@ const PageFive = () => {
         handleClick={() => handleClick("2")}
         answer={answer}
         answerText={text}
-        link="/gamePage5"
+        link="/gamePage6"
       />
     </div>
   );
