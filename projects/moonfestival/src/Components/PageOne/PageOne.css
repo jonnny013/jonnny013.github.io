@@ -9,7 +9,22 @@
     width: 400px;
     height: 150px;
     border-radius: 50%;
-    top: 30%;
+    top: 33%;
+    left: 35%;
+}
+
+.chineseAnswer {
+    position: fixed;
+  background-color: rgba(240, 248, 255, 0.442);
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+    width: 400px;
+    height: 150px;
+    border-radius: 50%;
+    top: 35%;
     left: 35%;
 }
 

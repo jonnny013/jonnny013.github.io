@@ -1,21 +1,23 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route, Link, } from "react-router-dom";
-import { useState, useEffect } from 'react';
-
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../il8n";
 
 const Button = (props) => {
+  const { t, i18n } = useTranslation();
+  const isChinese = i18n.language === "zw";
   return (
     <>
       {props.answerText !== "" && (
-        <div className="answer">
+        <div className={isChinese ? "chineseAnswer" : "answer"}>
           <h2>{props.answerText}</h2>
         </div>
       )}
       {props.answer === "correct" && (
-        <Link to={`${props.link}` }>
-          <div className="correct answer">
-            <h2 className="correctH2">Great! You got it.</h2>
-            <p className="correctH2">Next question...</p>
+        <Link to={`${props.link}`} onClick={props.reset}>
+          <div className={isChinese ? "chineseAnswer correct" : "correct answer"}>
+            <h2 className="correctH2">{t("A5title")}</h2>
+            <p className="correctH2">{t("A5para")}</p>
           </div>
         </Link>
       )}
@@ -24,6 +26,6 @@ const Button = (props) => {
       </div>
     </>
   );
-}
+};
 
-export default Button
+export default Button;

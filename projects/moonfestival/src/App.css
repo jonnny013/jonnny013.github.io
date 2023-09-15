@@ -1,5 +1,38 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 22px;
+  color: rgb(192, 188, 188)
+}
+
+.nacLangButtonsDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLangButtons {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  background-color: rgb(192, 188, 188);
+  color: black;
+  border: 2px solid #15096f;
+  height: 38px;
+  width: 120px;
+  border-radius: 8px;
+  padding: 0;
+}
+
 .mainBody {
-  position:relative;
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -7,78 +40,74 @@
 }
 
 .pageOne {
-background-image: url(../photos/tenSuns.jpeg);
+  background-image: url(../photos/tenSuns.jpeg);
 }
 
 .welcomePage {
-    background-image: url(../photos/welcomePage.webp);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
+  background-image: url(../photos/welcomePage.webp);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
-
 
 .pageTwo {
-background-image: url(../photos/HouYi.jpeg);
+  background-image: url(../photos/HouYi.jpeg);
 }
 
-
 .pageThree {
-    background-image: url(../photos/elixer.jpeg);
+  background-image: url(../photos/elixer.jpeg);
 }
 
 .pageFour {
-    background-image: url(../photos/moon.jpeg);
+  background-image: url(../photos/moon.jpeg);
 }
 
 .pageFive {
-    background-image: url(../photos/changE.webp);
+  background-image: url(../photos/changE.webp);
+}
+
+.pageSix {
+  background-image: url(../photos/happy.jpeg);
 }
 
 h1 {
-    position: relative;
-    padding: 5px;
-    border-radius: 10px;
-    width:fit-content;
-    margin:auto;
-        font-size: 60px;
+  position: relative;
+  padding: 5px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: auto;
+  font-size: 60px;
 }
 
 .welcomeH1 {
-    color: white;
-    background-color: rgb(5, 5, 105);
-        top: 10%;
+  color: white;
+  background-color: rgb(5, 5, 105);
+  top: 10%;
 }
 
-
-
 .button {
-    position: fixed;
-    height: 90px;
-    width: 90px;
-    border-radius: 50%;
-    text-align: center;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+  position: fixed;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .welcomeBtn {
-    background-color: orange;
-    top:40%;
-    left: 10%;
+  background-color: orange;
+  top: 40%;
+  left: 10%;
 }
-
-
 
 .button button {
-    background: initial;
+  background: initial;
   border: initial;
-    font-size: 25px;
-    cursor: pointer;
+  font-size: 25px;
+  cursor: pointer;
 }
-
-

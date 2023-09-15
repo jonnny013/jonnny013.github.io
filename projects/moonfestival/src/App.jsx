@@ -8,24 +8,28 @@ import PageThree from "./Components/PageThree/PageThree";
 import PageFour from "./Components/PageFour/PageFour";
 import PageFive from "./Components/PageFive/PageFive";
 import { useState, useEffect } from "react";
+import PageSix from "./Components/PageSix/PageSix";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "./Components/LanguageSelector";
 
 const App = () => {
   const [answer, setAnswer] = useState("");
   const [text, setText] = useState("");
+  const { t } = useTranslation();
 
   useEffect(() => {
     switch (answer) {
       case "1":
-        setText("No!");
+        setText(t('StandardA1'));
         break;
       case "2":
-        setText("Try again!");
+        setText(t("StandardA2"));
         break;
       case "3":
-        setText("Sorry!");
+        setText(t('StandardA3'));
         break;
       case "4":
-        setText("Nope!");
+        setText(t("StandardA4"));
         break;
       case "correct":
         setText("");
@@ -34,6 +38,10 @@ const App = () => {
         setText("");
     }
   }, [answer]);
+
+  const reset = () => {
+    setAnswer("")
+  }
 
   const handleClick = (num) => {
     setAnswer(num);
@@ -46,13 +54,35 @@ const App = () => {
   return (
     <>
       <Router>
-        <div>
-          <Link to="/">Home </Link>
-          <Link to="/gamePage1"> Page1 </Link>
-          <Link to="/gamePage2"> Page2 </Link>
-          <Link to="/gamePage3"> Page3 </Link>
-          <Link to="/gamePage4"> Page4 </Link>
-          <Link to="/gamePage5"> Page5 </Link>
+        <div className="navBar">
+          <Link className="navLink" to="/">
+            {t("nav1")}{" "}
+          </Link>
+          <Link className="navLink" to="/gamePage1">
+            {" "}
+            {t("nav2")}{" "}
+          </Link>
+          <Link className="navLink" to="/gamePage2">
+            {" "}
+            {t("nav3")}{" "}
+          </Link>
+          <Link className="navLink" to="/gamePage3">
+            {" "}
+            {t("nav4")}{" "}
+          </Link>
+          <Link className="navLink" to="/gamePage4">
+            {" "}
+            {t("nav5")}{" "}
+          </Link>
+          <Link className="navLink" to="/gamePage5">
+            {" "}
+            {t("nav6")}{" "}
+          </Link>
+          <Link className="navLink" to="/gamePage6">
+            {" "}
+            {t("nav7")}{" "}
+          </Link>
+          <LanguageSelector reset={reset} />
         </div>
 
         <Routes>
@@ -64,6 +94,7 @@ const App = () => {
                 text={text}
                 handleClick={handleClick}
                 handleCorrectAnswer={handleCorrectAnswer}
+                reset={reset}
               />
             }
           />
@@ -76,6 +107,7 @@ const App = () => {
                 text={text}
                 handleClick={handleClick}
                 handleCorrectAnswer={handleCorrectAnswer}
+                reset={reset}
               />
             }
           />
@@ -87,6 +119,7 @@ const App = () => {
                 text={text}
                 handleClick={handleClick}
                 handleCorrectAnswer={handleCorrectAnswer}
+                reset={reset}
               />
             }
           />
@@ -98,6 +131,7 @@ const App = () => {
                 text={text}
                 handleClick={handleClick}
                 handleCorrectAnswer={handleCorrectAnswer}
+                reset={reset}
               />
             }
           />
@@ -109,9 +143,11 @@ const App = () => {
                 text={text}
                 handleClick={handleClick}
                 handleCorrectAnswer={handleCorrectAnswer}
+                reset={reset}
               />
             }
           />
+          <Route path="/gamePage6" element={<PageSix />} />
         </Routes>
       </Router>
     </>
