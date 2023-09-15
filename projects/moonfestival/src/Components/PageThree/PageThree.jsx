@@ -38,13 +38,13 @@ const PageThree = () => {
   };
 
   return (
-    <div className="mainBody pageTwo">
-      <h1 className="pageOneH1">What is this man's name?</h1>
+    <div className="mainBody pageThree">
+      <h1 className="pageOneH1">Who drank the elixer?</h1>
 
       <Button
         class="button  pageBtn1"
         text="Chang'E"
-        handleClick={() => handleClick("1")}
+        handleClick={handleCorrectAnswer}
         answer={answer}
         answerText={text}
         link="/gamePage4"
@@ -52,7 +52,7 @@ const PageThree = () => {
       <Button
         class="button pageBtn2"
         text="Hou Yi"
-        handleClick={handleCorrectAnswer}
+        handleClick={() => handleClick("1")}
         answer={answer}
         answerText={text}
         link="/gamePage4"
@@ -75,7 +75,7 @@ const PageThree = () => {
       />
       <Button
         class="button pageBtn5"
-        text="Moon"
+        text="Rabbit"
         handleClick={() => handleClick("4")}
         answer={answer}
         answerText={text}

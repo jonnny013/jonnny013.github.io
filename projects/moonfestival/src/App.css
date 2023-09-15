@@ -12,6 +12,11 @@ background-image: url(../photos/tenSuns.jpeg);
 
 .welcomePage {
     background-image: url(../photos/welcomePage.webp);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
 }
 
 
@@ -21,7 +26,7 @@ background-image: url(../photos/HouYi.jpeg);
 
 
 .pageThree {
-    background-image: url();
+    background-image: url(../photos/elixer.jpeg);
 }
 
 h1 {
@@ -67,3 +72,5 @@ h1 {
     font-size: 25px;
     cursor: pointer;
 }
+
+

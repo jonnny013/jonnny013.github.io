@@ -6,7 +6,13 @@
   height: 100vh
 }
 
-
+.video-responsive {
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  margin:auto;
+  width: 500px;
+}
 
 
 

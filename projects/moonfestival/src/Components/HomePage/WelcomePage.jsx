@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Youtube from './Youtube';
 
 const WelcomePage = () => {
   return (
@@ -10,6 +11,8 @@ const WelcomePage = () => {
           <button>Start</button>
         </div>
       </Link>
+      <Youtube embedId='l2RKMqrEKSU?si=toWSZs5abCfBGkWg' />
+
     </div>
   );
 }
