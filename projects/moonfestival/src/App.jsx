@@ -11,11 +11,36 @@ import { useState, useEffect } from "react";
 import PageSix from "./Components/PageSix/PageSix";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "./Components/LanguageSelector";
+import MusicPlayer from "./Components/MusicPlayer";
+import useSound from "use-sound";
+import answersound from "../Sounds/answersound.mp3";
+import wronganswer from "../Sounds/wronganswer.mp3";
+import backgroundmusic from "../Sounds/backgroundmusic.mp3";
+
+
 
 const App = () => {
   const [answer, setAnswer] = useState("");
   const [text, setText] = useState("");
   const { t } = useTranslation();
+  const [playAnswer] = useSound(answersound);
+  const [playWrongAnswer] = useSound(wronganswer)
+  const [playing, setPlaying] = useState(false);
+  const [play, { pause }] = useSound(backgroundmusic, {
+    onplay: () => setPlaying(true),
+    onend: () => setPlaying(false),
+    volume: 0.4,
+  });
+
+  const togglePlay = () => {
+    console.log("clicked")
+    if (playing) {
+      pause();
+    } else {
+      play();
+    }
+    setPlaying(!playing);
+  };
 
   useEffect(() => {
     switch (answer) {
@@ -44,12 +69,17 @@ const App = () => {
   }
 
   const handleClick = (num) => {
+    playWrongAnswer()
     setAnswer(num);
   };
   const handleCorrectAnswer = () => {
+    playAnswer();
     setAnswer("correct");
   };
 
+  const toggleSound = () => {
+    playAnswer();
+  }
 
   return (
     <>
@@ -82,6 +112,7 @@ const App = () => {
             {" "}
             {t("nav7")}{" "}
           </Link>
+          <MusicPlayer playing={playing} togglePlay={togglePlay} />
           <LanguageSelector reset={reset} />
         </div>
 
@@ -98,7 +129,7 @@ const App = () => {
               />
             }
           />
-          <Route path="/" element={<WelcomePage />} />
+          <Route path="/" element={<WelcomePage toggleSound={toggleSound} />} />
           <Route
             path="/gamePage2"
             element={

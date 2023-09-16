@@ -2,13 +2,16 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../il8n";
+import { useState } from "react";
+
 
 const Button = (props) => {
   const { t, i18n } = useTranslation();
   const isChinese = i18n.language === "zw";
+  
   return (
     <>
-      {props.answerText !== "" && (
+      {props.answer !== "" && (
         <div className={isChinese ? "chineseAnswer" : "answer"}>
           <h2>{props.answerText}</h2>
         </div>
@@ -21,7 +24,7 @@ const Button = (props) => {
           </div>
         </Link>
       )}
-      <div className={props.class}>
+      <div className={props.class} >
         <button onClick={props.handleClick}>{props.text}</button>
       </div>
     </>

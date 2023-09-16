@@ -16,6 +16,7 @@ const PageOne = ({ answer, text, handleClick, handleCorrectAnswer, reset }) => {
         answerText={text}
         link="/gamePage2"
         reset={reset}
+        
       />
       <Button
         class="button pageBtn2"
@@ -25,6 +26,7 @@ const PageOne = ({ answer, text, handleClick, handleCorrectAnswer, reset }) => {
         answerText={text}
         link="/gamePage2"
         reset={reset}
+        
       />
       <Button
         class="button pageBtn3"
@@ -34,6 +36,7 @@ const PageOne = ({ answer, text, handleClick, handleCorrectAnswer, reset }) => {
         answerText={text}
         link="/gamePage2"
         reset={reset}
+        
       />
       <Button
         class="button pageBtn4"
@@ -42,6 +45,7 @@ const PageOne = ({ answer, text, handleClick, handleCorrectAnswer, reset }) => {
         answerText={text}
         link="/gamePage2"
         reset={reset}
+        
       />
       <Button
         class="button pageBtn5"
@@ -51,6 +55,7 @@ const PageOne = ({ answer, text, handleClick, handleCorrectAnswer, reset }) => {
         answerText={text}
         link="/gamePage2"
         reset={reset}
+        
       />
     </div>
   );
