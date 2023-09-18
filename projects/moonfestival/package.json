@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jonnny013.github.io/",
+  "homepage": "https://jonnny013.github.io/projects/moonfestival/dist/index.html",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
