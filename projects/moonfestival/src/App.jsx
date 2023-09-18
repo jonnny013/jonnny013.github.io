@@ -96,7 +96,7 @@ const App = () => {
     <>
       <Router>
         <div className="navBar">
-          <Link className="navLink" to="/">
+          <Link className="navLink1" to="/">
             {t("nav1")}{" "}
           </Link>
           <Link className="navLink" to="/gamePage1">
