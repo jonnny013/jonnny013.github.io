@@ -22,6 +22,7 @@ import backgroundmusic from "../Sounds/backgroundmusic.mp3";
 const App = () => {
   const [answer, setAnswer] = useState("");
   const [text, setText] = useState("");
+  const [buttonStates, setButtonStates] = useState([false, false,false, false, false])
   const { t } = useTranslation();
   const [playAnswer] = useSound(answersound);
   const [playWrongAnswer] = useSound(wronganswer)
@@ -33,7 +34,6 @@ const App = () => {
   });
 
   const togglePlay = () => {
-    console.log("clicked")
     if (playing) {
       pause();
     } else {
@@ -45,16 +45,19 @@ const App = () => {
   useEffect(() => {
     switch (answer) {
       case "1":
-        setText(t('StandardA1'));
+        setText(t("StandardA1"));
         break;
       case "2":
         setText(t("StandardA2"));
         break;
       case "3":
-        setText(t('StandardA3'));
+        setText(t("StandardA3"));
         break;
       case "4":
         setText(t("StandardA4"));
+        break;
+      case "5":
+        setText(t("StandardA5"));
         break;
       case "correct":
         setText("");
@@ -66,15 +69,23 @@ const App = () => {
 
   const reset = () => {
     setAnswer("")
+    const newButtonStates = [false, false, false, false, false];
+    setButtonStates(newButtonStates);
   }
 
   const handleClick = (num) => {
     playWrongAnswer()
     setAnswer(num);
+    const newButtonStates = [false, false, false, false, false];
+    newButtonStates[num - 1] = !newButtonStates[num - 1];
+    setButtonStates(newButtonStates)
   };
-  const handleCorrectAnswer = () => {
+  const handleCorrectAnswer = (num) => () => {
     playAnswer();
     setAnswer("correct");
+    const newButtonStates = [false, false, false, false, false];
+    newButtonStates[num - 1] = !newButtonStates[num - 1];
+    setButtonStates(newButtonStates);
   };
 
   const toggleSound = () => {
@@ -126,6 +137,7 @@ const App = () => {
                 handleClick={handleClick}
                 handleCorrectAnswer={handleCorrectAnswer}
                 reset={reset}
+                state={buttonStates}
               />
             }
           />
@@ -139,6 +151,7 @@ const App = () => {
                 handleClick={handleClick}
                 handleCorrectAnswer={handleCorrectAnswer}
                 reset={reset}
+                state={buttonStates}
               />
             }
           />
@@ -151,6 +164,7 @@ const App = () => {
                 handleClick={handleClick}
                 handleCorrectAnswer={handleCorrectAnswer}
                 reset={reset}
+                state={buttonStates}
               />
             }
           />
@@ -163,6 +177,7 @@ const App = () => {
                 handleClick={handleClick}
                 handleCorrectAnswer={handleCorrectAnswer}
                 reset={reset}
+                state={buttonStates}
               />
             }
           />
@@ -175,6 +190,7 @@ const App = () => {
                 handleClick={handleClick}
                 handleCorrectAnswer={handleCorrectAnswer}
                 reset={reset}
+                state={buttonStates}
               />
             }
           />

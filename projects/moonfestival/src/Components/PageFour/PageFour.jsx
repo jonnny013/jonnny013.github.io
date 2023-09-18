@@ -4,7 +4,7 @@ import Button from "../PageOne/Button";
 import "./PageFour.css"
 import { useTranslation } from "react-i18next";
 
-const PageFour = ({ answer, text, handleClick, handleCorrectAnswer, reset }) => {
+const PageFour = ({ answer, text, handleClick, handleCorrectAnswer, reset, state }) => {
   const { t } = useTranslation();
   return (
     <div className="mainBody pageFour">
@@ -18,6 +18,7 @@ const PageFour = ({ answer, text, handleClick, handleCorrectAnswer, reset }) => 
         answerText={text}
         link="/gamePage4"
         reset={reset}
+        state={state[0]}
       />
       <Button
         class="button buttonTwo allButton"
@@ -27,6 +28,7 @@ const PageFour = ({ answer, text, handleClick, handleCorrectAnswer, reset }) => 
         answerText={text}
         link="/gamePage4"
         reset={reset}
+        state={state[1]}
       />
       <Button
         class="button buttonThree allButton"
@@ -36,6 +38,7 @@ const PageFour = ({ answer, text, handleClick, handleCorrectAnswer, reset }) => 
         answerText={text}
         link="/gamePage4"
         reset={reset}
+        state={state[2]}
       />
       <Button
         class="button buttonFour allButton"
@@ -45,15 +48,17 @@ const PageFour = ({ answer, text, handleClick, handleCorrectAnswer, reset }) => 
         answerText={text}
         link="/gamePage4"
         reset={reset}
+        state={state[3]}
       />
       <Button
         class="button buttonFive allButton"
         text={t("Q4A5")}
-        handleClick={handleCorrectAnswer}
+        handleClick={handleCorrectAnswer("5")}
         answer={answer}
         answerText={text}
         link="/gamePage5"
         reset={reset}
+        state={state[4]}
       />
     </div>
   );

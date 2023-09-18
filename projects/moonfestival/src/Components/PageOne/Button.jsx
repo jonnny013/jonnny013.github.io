@@ -6,27 +6,29 @@ import { useState } from "react";
 
 
 const Button = (props) => {
+  
   const { t, i18n } = useTranslation();
   const isChinese = i18n.language === "zw";
-  
   return (
     <>
-      {props.answer !== "" && (
+      <div className={props.class}>
+        <button onClick={props.handleClick}>{props.text}</button>
+      </div>
+      {props.state && props.answer !== "correct" && (
         <div className={isChinese ? "chineseAnswer" : "answer"}>
           <h2>{props.answerText}</h2>
         </div>
       )}
-      {props.answer === "correct" && (
+      {props.state && props.answer === "correct" && (
         <Link to={`${props.link}`} onClick={props.reset}>
-          <div className={isChinese ? "chineseAnswer correct" : "correct answer"}>
+          <div
+            className={isChinese ? "chineseAnswer correct" : "correct answer"}
+          >
             <h2 className="correctH2">{t("A5title")}</h2>
             <p className="correctH2">{t("A5para")}</p>
           </div>
         </Link>
       )}
-      <div className={props.class} >
-        <button onClick={props.handleClick}>{props.text}</button>
-      </div>
     </>
   );
 };

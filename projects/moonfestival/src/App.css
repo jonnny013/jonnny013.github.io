@@ -99,7 +99,7 @@ h1 {
 }
 
 .button {
-  position: fixed;
+  position: absolute;
   height: 90px;
   width: 90px;
   border-radius: 50%;
@@ -112,8 +112,7 @@ h1 {
 
 .welcomeBtn {
   background-color: orange;
-  top: 40%;
-  left: 10%;
+  position: relative;
 }
 
 .button button {
@@ -122,3 +121,29 @@ h1 {
   font-size: 25px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 900px) {
+  .button {
+    position: relative;
+  }
+
+  .mainBody {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  div.mainBody * {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  }
+
+  @media screen and (max-width: 650px) {
+    .navLink {
+      display: none;
+    }
+  }

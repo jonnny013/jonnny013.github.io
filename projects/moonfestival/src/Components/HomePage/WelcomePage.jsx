@@ -13,7 +13,10 @@ const WelcomePage = ({toggleSound}) => {
           <button>{t("start")}</button>
         </div>
       </Link>
-      <Youtube embedId="l2RKMqrEKSU?si=toWSZs5abCfBGkWg" />
+      <div style={{ display: "flex", gap: 20, }}>
+        <Youtube embedId="l2RKMqrEKSU?si=toWSZs5abCfBGkWg" vsn="Version 1" />
+        <Youtube embedId="R8tHNitL-LU?si=aQ2PCfDSptHAXy66" vsn="Version 2" />
+      </div>
     </div>
   );
 }
