@@ -51,11 +51,11 @@
 }
 
 .pageOne {
-  background-image: url(../photos/tenSuns.jpeg);
+  background-image: url(/photos/tenSuns.jpeg);
 }
 
 .welcomePage {
-  background-image: url(../photos/welcomePage.webp);
+  background-image: url(/photos/welcomePage.webp);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,23 +63,23 @@
 }
 
 .pageTwo {
-  background-image: url(../photos/HouYi.jpeg);
+  background-image: url(/photos/HouYi.jpeg);
 }
 
 .pageThree {
-  background-image: url(../photos/elixer.jpeg);
+  background-image: url(/photos/elixer.jpeg);
 }
 
 .pageFour {
-  background-image: url(../photos/moon.jpeg);
+  background-image: url(/photos/moon.jpeg);
 }
 
 .pageFive {
-  background-image: url(../photos/changE.webp);
+  background-image: url(/photos/changE.webp);
 }
 
 .pageSix {
-  background-image: url(../photos/happy.jpeg);
+  background-image: url(/photos/happy.jpeg);
 }
 
 h1 {

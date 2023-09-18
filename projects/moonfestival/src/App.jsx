@@ -13,9 +13,9 @@ import { useTranslation } from "react-i18next";
 import LanguageSelector from "./Components/LanguageSelector";
 import MusicPlayer from "./Components/MusicPlayer";
 import useSound from "use-sound";
-import answersound from "../Sounds/answersound.mp3";
-import wronganswer from "../Sounds/wronganswer.mp3";
-import backgroundmusic from "../Sounds/backgroundmusic.mp3";
+import answersound from "/Sounds/answersound.mp3";
+import wronganswer from "/Sounds/wronganswer.mp3";
+import backgroundmusic from "/Sounds/backgroundmusic.mp3";
 
 
 
@@ -32,6 +32,7 @@ const App = () => {
     onend: () => setPlaying(false),
     volume: 0.4,
   });
+
 
   const togglePlay = () => {
     if (playing) {
@@ -79,6 +80,7 @@ const App = () => {
     const newButtonStates = [false, false, false, false, false];
     newButtonStates[num - 1] = !newButtonStates[num - 1];
     setButtonStates(newButtonStates)
+    
   };
   const handleCorrectAnswer = (num) => () => {
     playAnswer();
@@ -86,8 +88,8 @@ const App = () => {
     const newButtonStates = [false, false, false, false, false];
     newButtonStates[num - 1] = !newButtonStates[num - 1];
     setButtonStates(newButtonStates);
+    
   };
-
   const toggleSound = () => {
     playAnswer();
   }

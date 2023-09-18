@@ -1,9 +1,12 @@
 import "./PageOne.css";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
-const PageOne = ({ answer, text, handleClick, handleCorrectAnswer, reset, state }) => {
+const PageOne = ({ answer, text, handleClick, handleCorrectAnswer, reset, state, count, setCount }) => {
   const { t } = useTranslation();
+
+
   return (
     <div className="mainBody pageOne">
       <h1 className="pageOneH1">{t("Q1")}</h1>
