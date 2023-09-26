@@ -98,30 +98,30 @@ const App = () => {
     <>
       <Router>
         <div className="navBar">
-          <Link className="navLink1" to="/">
+          <Link className="navLink1" to="/projects/moonfestival/">
             {t("nav1")}{" "}
           </Link>
-          <Link className="navLink" to="/gamePage1">
+          <Link className="navLink" to="/projects/moonfestival/gamePage1">
             {" "}
             {t("nav2")}{" "}
           </Link>
-          <Link className="navLink" to="/gamePage2">
+          <Link className="navLink" to="/projects/moonfestival/gamePage2">
             {" "}
             {t("nav3")}{" "}
           </Link>
-          <Link className="navLink" to="/gamePage3">
+          <Link className="navLink" to="/projects/moonfestival/gamePage3">
             {" "}
             {t("nav4")}{" "}
           </Link>
-          <Link className="navLink" to="/gamePage4">
+          <Link className="navLink" to="/projects/moonfestival/gamePage4">
             {" "}
             {t("nav5")}{" "}
           </Link>
-          <Link className="navLink" to="/gamePage5">
+          <Link className="navLink" to="/projects/moonfestival/gamePage5">
             {" "}
             {t("nav6")}{" "}
           </Link>
-          <Link className="navLink" to="/gamePage6">
+          <Link className="navLink" to="/projects/moonfestival/gamePage6">
             {" "}
             {t("nav7")}{" "}
           </Link>
@@ -131,7 +131,7 @@ const App = () => {
 
         <Routes>
           <Route
-            path="/gamePage1"
+            path="/projects/moonfestival/gamePage1"
             element={
               <PageOne
                 answer={answer}
@@ -143,9 +143,12 @@ const App = () => {
               />
             }
           />
-          <Route path="/" element={<WelcomePage toggleSound={toggleSound} />} />
           <Route
-            path="/gamePage2"
+            path="/projects/moonfestival/"
+            element={<WelcomePage toggleSound={toggleSound} />}
+          />
+          <Route
+            path="/projects/moonfestival/gamePage2"
             element={
               <PageTwo
                 answer={answer}
@@ -158,7 +161,7 @@ const App = () => {
             }
           />
           <Route
-            path="/gamePage3"
+            path="/projects/moonfestival/gamePage3"
             element={
               <PageThree
                 answer={answer}
@@ -171,7 +174,7 @@ const App = () => {
             }
           />
           <Route
-            path="/gamePage4"
+            path="/projects/moonfestival/gamePage4"
             element={
               <PageFour
                 answer={answer}
@@ -184,7 +187,7 @@ const App = () => {
             }
           />
           <Route
-            path="/gamePage5"
+            path="/projects/moonfestival/gamePage5"
             element={
               <PageFive
                 answer={answer}
@@ -196,7 +199,10 @@ const App = () => {
               />
             }
           />
-          <Route path="/gamePage6" element={<PageSix />} />
+          <Route
+            path="/projects/moonfestival/gamePage6"
+            element={<PageSix />}
+          />
         </Routes>
       </Router>
     </>

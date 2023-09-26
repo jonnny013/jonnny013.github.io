@@ -15,7 +15,7 @@ const PageThree = ({ answer, text, handleClick, handleCorrectAnswer, reset, stat
         handleClick={handleCorrectAnswer("5")}
         answer={answer}
         answerText={text}
-        link="/gamePage4"
+        link="/projects/moonfestival/gamePage4"
         reset={reset}
         state={state[0]}
       />
@@ -25,7 +25,7 @@ const PageThree = ({ answer, text, handleClick, handleCorrectAnswer, reset, stat
         handleClick={() => handleClick("1")}
         answer={answer}
         answerText={text}
-        link="/gamePage4"
+        link="/projects/moonfestival/gamePage4"
         reset={reset}
         state={state[1]}
       />
@@ -35,7 +35,7 @@ const PageThree = ({ answer, text, handleClick, handleCorrectAnswer, reset, stat
         handleClick={() => handleClick("2")}
         answer={answer}
         answerText={text}
-        link="/gamePage4"
+        link="/projects/moonfestival/gamePage4"
         reset={reset}
         state={state[2]}
       />
@@ -45,7 +45,7 @@ const PageThree = ({ answer, text, handleClick, handleCorrectAnswer, reset, stat
         handleClick={() => handleClick("3")}
         answer={answer}
         answerText={text}
-        link="/gamePage4"
+        link="/projects/moonfestival/gamePage4"
         reset={reset}
         state={state[3]}
       />
@@ -55,7 +55,7 @@ const PageThree = ({ answer, text, handleClick, handleCorrectAnswer, reset, stat
         handleClick={() => handleClick("4")}
         answer={answer}
         answerText={text}
-        link="/gamePage4"
+        link="/projects/moonfestival/gamePage4"
         reset={reset}
         state={state[4]}
       />
