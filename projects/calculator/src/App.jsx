@@ -11,7 +11,6 @@ const App = () => {
   const [secondNumber, setSecondNumber] = useState(0);
   const [operator, setOperator] = useState(null)
   const [displayReset, setDisplayReset] = useState(false)
-  const [repeat, setRepeat] = useState(false)
 
    //console.log(`display: ${display}, controller: ${controllers}, first number: ${firstNumber}, second number: ${secondNumber}, operator: ${operator}, reset: ${displayReset} `)
 
@@ -104,19 +103,14 @@ const handleKeyClick = (key) => {
   }
 
   const handleNumberClick = (num) => {
-    setRepeat(false)
     if (displayReset) {
       setDisplay(num)
       setDisplayReset(false)
     }
-    else{
-      setDisplay(display.concat(num))
-    }
+    else{setDisplay(display.concat(num))}
   }
 
   const handleControlClick = (item) => {
-    console.log("hi")
-    setRepeat(true)
     setControllers(item)
   }
   if (operator === null) {
@@ -127,46 +121,45 @@ const handleKeyClick = (key) => {
         setFirstNumber(0);
         setSecondNumber(0);
         setOperator(null);
-        setDisplayReset(false);
-        setRepeat(false);
+        setDisplayReset(false)
         break;
       case "÷":
         setControllers("");
         setOperator("÷");
         setFirstNumber(Number(display));
-        setDisplayReset(true);
+        setDisplayReset(true)
         break;
       case "x":
         setControllers("");
         setOperator("x");
         setFirstNumber(Number(display));
-        setDisplayReset(true);
+        setDisplayReset(true)
         break;
       case "-":
-        if (display === "") {
+        if (display === '') {
           setControllers("");
-          setDisplay(display.concat("-"));
-          break;
-        } else {
-          setControllers("");
-          setOperator("-");
-          setFirstNumber(Number(display));
-          setDisplayReset(true);
+          setDisplay(display.concat('-'))
           break;
         }
-
+        else {setControllers("");
+        setOperator("-");
+        setFirstNumber(Number(display));
+        setDisplayReset(true)
+        break;}
+        
       case "+":
         setControllers("");
         setOperator("+");
         setFirstNumber(Number(display));
-        setDisplayReset(true);
+        setDisplayReset(true)
         break;
       case "=":
         setControllers("");
         setFirstNumber(Number(display));
         break;
     }
-  } else if (operator !== null && repeat === false) {
+  }
+  else if (operator !== null) {
     switch (controllers) {
       case "c":
         setControllers("");
@@ -174,77 +167,54 @@ const handleKeyClick = (key) => {
         setFirstNumber(0);
         setSecondNumber(0);
         setOperator(null);
-        setDisplayReset(false);
-        setRepeat(false);
+        setDisplayReset(false)
         break;
       case "÷":
         setControllers("");
         setSecondNumber(Number(display));
-        calculatorChoice(Number(display));
+        calculatorChoice(Number(display))
         setOperator("÷");
-        setDisplayReset(true);
+        setDisplayReset(true)
         break;
       case "x":
         setControllers("");
         setSecondNumber(Number(display));
         calculatorChoice(Number(display));
         setOperator("x");
-        setDisplayReset(true);
+        setDisplayReset(true)
         break;
       case "-":
         setControllers("");
         setSecondNumber(Number(display));
         calculatorChoice(Number(display));
         setOperator("-");
-        setDisplayReset(true);
+        setDisplayReset(true)
         break;
       case "+":
         setControllers("");
         setSecondNumber(Number(display));
         calculatorChoice(Number(display));
         setOperator("+");
-        setDisplayReset(true);
+        setDisplayReset(true)
         break;
       case "=":
         if (secondNumber === 0) {
           setControllers("");
-          setSecondNumber(Number(display));
-          calculatorChoice(Number(display));
-          setDisplayReset(true);
-        } else {
+        setSecondNumber(Number(display));
+        calculatorChoice(Number(display));
+        setDisplayReset(true)
+        }
+        else {
           setControllers("");
-          setFirstNumber(Number(display));
-          calculatorChoice(secondNumber);
-          setDisplayReset(true);
+        setFirstNumber(Number(display));
+        calculatorChoice(secondNumber);
+        setDisplayReset(true)
         }
         break;
-    }
-  } else if (operator !== null && repeat === true) {
-    switch (controllers) {
-      case "c":
-        setControllers("");
-        setDisplay("");
-        setFirstNumber(0);
-        setSecondNumber(0);
-        setOperator(null);
-        setDisplayReset(false);
-        setRepeat(false);
-        break;
-      case "=":
-        if (secondNumber === 0) {
-          setControllers("");
-          setSecondNumber(Number(display));
-          calculatorChoice(Number(display));
-        } else {
-          setControllers("");
-          setFirstNumber(Number(display));
-          calculatorChoice(secondNumber);
-        }
-        break;
-    }
+  }
   }
 
-  console.log(repeat)
+  
 
   return (
     <div className="outerLayer">
