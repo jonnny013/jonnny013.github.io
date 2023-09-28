@@ -1,9 +1,21 @@
 import React from 'react'
 
 const Display = (props) => {
+  const display = props.display.toString()
+  const fontSize = () => {
+    console.log("length", display.length)
+if (display.length > 14 ) {
+  return "smallerText"
+}
+else {return "displayText"}
+  }
+  
+  
   return (
     <>
-        <div className='display'></div>
+        <div className='display'>
+          <h2 className={fontSize()}>{props.display}</h2>
+        </div>
     </>
   )
 }

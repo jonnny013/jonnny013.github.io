@@ -1,23 +1,75 @@
 .outerLayer {
   border: 1px solid black;
   height: 500px;
-  width: 500px;
+  width: 400px;
   background-color: rgb(172, 169, 169);
+  margin:auto;
+  border-radius: 5px;
 }
 
 .display {
   margin: auto;
   width: 90%;
-  height: 70px;
+  height: 15%;
   background-color: grey;
   margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  overflow:scroll;
+}
+
+.displayText {
+  font-size: 3rem;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.smallerText {
+  font-size: 1.5rem;
+
+  padding-left: 10px;
+}
+
+.allButtons {
+  display: flex;
+ height: 370px;
+ margin: 5px;
 }
 
 .numberButtons {
-  height: 50px;
-  width: 70px;
+  font-size: 3rem;
+  border-radius: 5px;
 }
 
 .numBtnDiv {
   display: flex;
+  width: 70%;
+  height: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.numBtnDiv>* {
+  flex: 1 1 30%;
+}
+
+.controlBtnDiv {
+  display: flex;
+  width: 20%;
+  height: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.controlButtons {
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  background-color: orange;
+  border-radius: 5px;
+}
+
+.controlBtnDiv>* {
+  flex: 1 1 100%;
 }
