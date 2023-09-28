@@ -4,6 +4,7 @@ const ControlButtons = (props) => {
   return (
     <div>
       <button
+        id={props.id}
         className="controlButtons"
         onClick={() => props.handleClick(props.text)}
       >

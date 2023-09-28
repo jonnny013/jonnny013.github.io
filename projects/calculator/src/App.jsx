@@ -1,10 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import Display from './Components/Display'
 import Buttons from './Components/Buttons'
-import { useState } from 'react'
 import ControlButtons from './Components/ControlButtons'
-import equations from './equations'
 
 const App = () => {
   const [display, setDisplay] = useState('')
@@ -14,7 +12,7 @@ const App = () => {
   const [operator, setOperator] = useState(null)
   const [displayReset, setDisplayReset] = useState(false)
 
-  console.log(`display: ${display}, controller: ${controllers}, first number: ${firstNumber}, second number: ${secondNumber}, operator: ${operator}, reset: ${displayReset} `)
+  // console.log(`display: ${display}, controller: ${controllers}, first number: ${firstNumber}, second number: ${secondNumber}, operator: ${operator}, reset: ${displayReset} `)
 
   const numbers = [
     { number: "1", id: 1 },
@@ -29,13 +27,56 @@ const App = () => {
     { number: '0', id: 0 },
   ];
   const controls = [
-    { control: "c", id: 1 },
-    { control: "÷", id: 2 },
-    { control: "x", id: 3 },
-    { control: "-", id: 4 },
-    { control: "+", id: 5 },
-    { control: "=", id: 6 },
+    { control: "c", id: "c" },
+    { control: "÷", id: "÷" },
+    { control: "x", id: "x" },
+    { control: "-", id: '-' },
+    { control: "+", id: '+' },
+    { control: "=", id: '=' },
   ];
+  const keyMappings = {
+    0: "0",
+    '1': "1",
+    2: "2",
+    3: "3",
+    4: "4",
+    5: "5",
+    6: "6",
+    7: "7",
+    8: "8",
+    9: "9",
+    "+": "+",
+    "-": "-",
+    "*": "x",
+    "/": "÷",
+    "=": "=",
+    Enter: "=", 
+    Escape: "c", 
+  };
+
+const handleKeyClick = (key) => {
+  if (keyMappings[key]) {
+  
+    const buttonId = keyMappings[key];
+    const buttonElement = document.getElementById(buttonId);
+    console.log(buttonElement)
+    if (buttonElement) {
+      buttonElement.click()
+    }
+  }
+};
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      const key = event.key
+      handleKeyClick(key)
+    }
+    window.addEventListener("keydown", handleKeyPress);
+   
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [])
+
 
   const calculatorChoice = (num) => {
     switch (operator) {
@@ -96,11 +137,17 @@ const App = () => {
         setDisplayReset(true)
         break;
       case "-":
-        setControllers("");
+        if (display === '') {
+          setControllers("");
+          setDisplay(display.concat('-'))
+          break;
+        }
+        else {setControllers("");
         setOperator("-");
         setFirstNumber(Number(display));
         setDisplayReset(true)
-        break;
+        break;}
+        
       case "+":
         setControllers("");
         setOperator("+");
@@ -173,11 +220,12 @@ const App = () => {
   return (
     <div className="outerLayer">
       <Display display={display} />
-      <div className='allButtons'>
+      <div className="allButtons">
         <div className="numBtnDiv">
           {numbers.map((x) => (
             <Buttons
               key={x.id}
+              id={x.id}
               text={x.number}
               handleClick={handleNumberClick}
             />
@@ -187,6 +235,7 @@ const App = () => {
           {controls.map((x) => (
             <ControlButtons
               key={x.id}
+              id={x.id}
               text={x.control}
               handleClick={handleControlClick}
             />

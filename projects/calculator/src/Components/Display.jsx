@@ -3,7 +3,6 @@ import React from 'react'
 const Display = (props) => {
   const display = props.display.toString()
   const fontSize = () => {
-    console.log("length", display.length)
 if (display.length > 14 ) {
   return "smallerText"
 }
