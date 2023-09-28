@@ -12,7 +12,7 @@ const App = () => {
   const [operator, setOperator] = useState(null)
   const [displayReset, setDisplayReset] = useState(false)
 
-  // console.log(`display: ${display}, controller: ${controllers}, first number: ${firstNumber}, second number: ${secondNumber}, operator: ${operator}, reset: ${displayReset} `)
+   //console.log(`display: ${display}, controller: ${controllers}, first number: ${firstNumber}, second number: ${secondNumber}, operator: ${operator}, reset: ${displayReset} `)
 
   const numbers = [
     { number: "1", id: 1 },
@@ -59,7 +59,6 @@ const handleKeyClick = (key) => {
   
     const buttonId = keyMappings[key];
     const buttonElement = document.getElementById(buttonId);
-    console.log(buttonElement)
     if (buttonElement) {
       buttonElement.click()
     }
