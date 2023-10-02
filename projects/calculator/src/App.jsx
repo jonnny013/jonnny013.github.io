@@ -1,42 +1,94 @@
-import React, { useEffect, useState } from 'react'
-import './App.css'
-import Display from './Components/Display'
-import Buttons from './Components/Buttons'
-import ControlButtons from './Components/ControlButtons'
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Display from "./Components/Display";
+import Buttons from "./Components/Buttons";
+import ControlButtons from "./Components/ControlButtons";
 
 const App = () => {
-  const [display, setDisplay] = useState('')
-  const [controllers, setControllers] = useState('')
-  const [firstNumber, setFirstNumber] = useState(0)
-  const [secondNumber, setSecondNumber] = useState(0);
-  const [operator, setOperator] = useState(null)
-  const [displayReset, setDisplayReset] = useState(false)
+  const [display, setDisplay] = useState("");
+  const [controllers, setControllers] = useState("");
+  const [firstNumber, setFirstNumber] = useState(null);
+  const [secondNumber, setSecondNumber] = useState(null);
+  const [operator, setOperator] = useState(null);
+  const [displayReset, setDisplayReset] = useState(false);
+  const [fixDoubleOperator, setFixDoubleOperator] = useState(false);
+  const [equalRepeated, setEqualRepeated] = useState(false);
 
-   //console.log(`display: ${display}, controller: ${controllers}, first number: ${firstNumber}, second number: ${secondNumber}, operator: ${operator}, reset: ${displayReset} `)
+  //console.log(`display: ${display} ${typeof display}, controller: ${controllers}, first number: ${firstNumber}, second number: ${secondNumber}, operator: ${operator}, reset: ${displayReset} `);
+
+  const clear = () => {
+    setControllers("");
+    setDisplay("");
+    setFirstNumber(null);
+    setSecondNumber(null);
+    setOperator(null);
+    setDisplayReset(false);
+    setFixDoubleOperator(false);
+  };
+
+  const calculationTypeOne = (type, display) => {
+    setControllers("");
+    setOperator(type);
+    setFirstNumber(Number(display));
+    setDisplayReset(true);
+    setEqualRepeated(false);
+  };
+
+  const calculationTypeTwo = (type) => {
+    setControllers("");
+    setSecondNumber(Number(display));
+    calculatorChoice(Number(display));
+    setOperator(type);
+    setDisplayReset(true);
+    setEqualRepeated(false);
+  };
+
+  const calculationTypeThree = (type, display) => {
+    setControllers("");
+    setOperator(type);
+    setDisplayReset(true);
+    setSecondNumber(Number(display));
+  };
+
+  const equals = () => {
+    if (equalRepeated === true) {
+      setEqualRepeated(true);
+      setControllers("");
+      setFirstNumber(Number(display));
+      calculatorChoice(secondNumber);
+      setDisplayReset(true);
+    } else {
+      setEqualRepeated(true);
+      setControllers("");
+      setSecondNumber(Number(display));
+      calculatorChoice(Number(display));
+      setDisplayReset(true);
+    }
+  };
 
   const numbers = [
     { number: "1", id: 1 },
-    { number: '2', id: 2 },
-    { number: '3', id: 3 },
-    { number: '4', id: 4 },
-    { number: '5', id: 5 },
-    { number: '6', id: 6 },
-    { number: '7', id: 7 },
-    { number: '8', id: 8 },
-    { number: '9', id: 9 },
-    { number: '0', id: 0 },
+    { number: "2", id: 2 },
+    { number: "3", id: 3 },
+    { number: "4", id: 4 },
+    { number: "5", id: 5 },
+    { number: "6", id: 6 },
+    { number: "7", id: 7 },
+    { number: "8", id: 8 },
+    { number: "9", id: 9 },
+    { number: "0", id: 0 },
   ];
   const controls = [
     { control: "c", id: "c" },
     { control: "÷", id: "÷" },
     { control: "x", id: "x" },
-    { control: "-", id: '-' },
-    { control: "+", id: '+' },
-    { control: "=", id: '=' },
+    { control: "-", id: "-" },
+    { control: "+", id: "+" },
+    { control: "=", id: "=" },
   ];
   const keyMappings = {
     0: "0",
-    '1': "1",
+    1: "1",
     2: "2",
     3: "3",
     4: "4",
@@ -50,171 +102,143 @@ const App = () => {
     "*": "x",
     "/": "÷",
     "=": "=",
-    Enter: "=", 
-    Escape: "c", 
+    Enter: "=",
+    Escape: "c",
   };
 
-const handleKeyClick = (key) => {
-  if (keyMappings[key]) {
-  
-    const buttonId = keyMappings[key];
-    const buttonElement = document.getElementById(buttonId);
-    if (buttonElement) {
-      buttonElement.click()
+  const handleKeyClick = (key) => {
+    if (keyMappings[key]) {
+      const buttonId = keyMappings[key];
+      const buttonElement = document.getElementById(buttonId);
+      if (buttonElement) {
+        buttonElement.click();
+      }
     }
-  }
-};
+  };
   useEffect(() => {
     const handleKeyPress = (event) => {
-      const key = event.key
-      handleKeyClick(key)
-    }
+      const key = event.key;
+      handleKeyClick(key);
+    };
     window.addEventListener("keydown", handleKeyPress);
-   
+
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
-  }, [])
-
+  }, []);
 
   const calculatorChoice = (num) => {
+    console.log(num);
     switch (operator) {
       case "÷":
-        const newNum = (firstNumber / num)
-        setDisplay(newNum)
-        setFirstNumber(newNum)
+        const newNum = firstNumber / num;
+        setDisplay(newNum);
+        setFirstNumber(newNum);
         break;
       case "x":
-        const newNum1 = (firstNumber * num);
+        const newNum1 = firstNumber * num;
         setDisplay(newNum1);
         setFirstNumber(newNum1);
         break;
       case "-":
-        const newNum2 = (firstNumber - num);
+        const newNum2 = firstNumber - num;
         setDisplay(newNum2);
         setFirstNumber(newNum2);
         break;
       case "+":
-        const newNum3 = (firstNumber + num);
+        const newNum3 = firstNumber + num;
         setDisplay(newNum3);
         setFirstNumber(newNum3);
         break;
     }
-  }
+  };
 
   const handleNumberClick = (num) => {
+    setEqualRepeated(false);
+    setFixDoubleOperator(false);
     if (displayReset) {
-      setDisplay(num)
-      setDisplayReset(false)
+      setDisplay(num);
+      setDisplayReset(false);
+    } else {
+      setDisplay(display.concat(num));
     }
-    else{setDisplay(display.concat(num))}
-  }
+  };
 
   const handleControlClick = (item) => {
-    setControllers(item)
-  }
+    setTimeout(() => setFixDoubleOperator(true), 1);
+    setControllers(item);
+  };
   if (operator === null) {
     switch (controllers) {
       case "c":
-        setControllers("");
-        setDisplay("");
-        setFirstNumber(0);
-        setSecondNumber(0);
-        setOperator(null);
-        setDisplayReset(false)
+        clear();
         break;
       case "÷":
-        setControllers("");
-        setOperator("÷");
-        setFirstNumber(Number(display));
-        setDisplayReset(true)
+        calculationTypeOne("÷", display);
         break;
       case "x":
-        setControllers("");
-        setOperator("x");
-        setFirstNumber(Number(display));
-        setDisplayReset(true)
+        calculationTypeOne("x", display);
         break;
       case "-":
-        if (display === '') {
+        if (display === "") {
           setControllers("");
-          setDisplay(display.concat('-'))
+          setDisplay(display.concat("-"));
+          break;
+        } else {
+          calculationTypeOne("-", display);
           break;
         }
-        else {setControllers("");
-        setOperator("-");
-        setFirstNumber(Number(display));
-        setDisplayReset(true)
-        break;}
-        
       case "+":
-        setControllers("");
-        setOperator("+");
-        setFirstNumber(Number(display));
-        setDisplayReset(true)
+        calculationTypeOne("+", display);
         break;
       case "=":
         setControllers("");
         setFirstNumber(Number(display));
         break;
     }
-  }
-  else if (operator !== null) {
+  } else if (operator !== null && fixDoubleOperator === false) {
     switch (controllers) {
       case "c":
-        setControllers("");
-        setDisplay("");
-        setFirstNumber(0);
-        setSecondNumber(0);
-        setOperator(null);
-        setDisplayReset(false)
+        clear();
         break;
       case "÷":
-        setControllers("");
-        setSecondNumber(Number(display));
-        calculatorChoice(Number(display))
-        setOperator("÷");
-        setDisplayReset(true)
+        calculationTypeTwo("÷");
         break;
       case "x":
-        setControllers("");
-        setSecondNumber(Number(display));
-        calculatorChoice(Number(display));
-        setOperator("x");
-        setDisplayReset(true)
+        calculationTypeTwo("x");
         break;
       case "-":
-        setControllers("");
-        setSecondNumber(Number(display));
-        calculatorChoice(Number(display));
-        setOperator("-");
-        setDisplayReset(true)
+        calculationTypeTwo("-");
         break;
       case "+":
-        setControllers("");
-        setSecondNumber(Number(display));
-        calculatorChoice(Number(display));
-        setOperator("+");
-        setDisplayReset(true)
+        calculationTypeTwo("+");
         break;
       case "=":
-        if (secondNumber === 0) {
-          setControllers("");
-        setSecondNumber(Number(display));
-        calculatorChoice(Number(display));
-        setDisplayReset(true)
-        }
-        else {
-          setControllers("");
-        setFirstNumber(Number(display));
-        calculatorChoice(secondNumber);
-        setDisplayReset(true)
-        }
+        equals();
         break;
+    }
+  } else if (operator !== null && fixDoubleOperator === true) {
+    switch (controllers) {
+      case "÷":
+        calculationTypeThree("÷", display);
+        break;
+      case "x":
+        calculationTypeThree("x", display);
+        break;
+      case "-":
+        calculationTypeThree("-", display);
+        break;
+      case "+":
+        calculationTypeThree("+", display);
+        break;
+      case "c":
+        clear();
+        break;
+      case "=":
+        equals();
+        break;
+    }
   }
-  }
-
-  
 
   return (
     <div className="outerLayer">
@@ -237,12 +261,13 @@ const handleKeyClick = (key) => {
               id={x.id}
               text={x.control}
               handleClick={handleControlClick}
+              operator={operator}
             />
           ))}
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default App
+export default App;
