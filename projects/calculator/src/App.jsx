@@ -128,7 +128,6 @@ const App = () => {
   }, []);
 
   const calculatorChoice = (num) => {
-    console.log(num);
     switch (operator) {
       case "÷":
         const newNum = firstNumber / num;
@@ -241,29 +240,50 @@ const App = () => {
   }
 
   return (
-    <div className="outerLayer">
-      <Display display={display} />
-      <div className="allButtons">
-        <div className="numBtnDiv">
-          {numbers.map((x) => (
-            <Buttons
-              key={x.id}
-              id={x.id}
-              text={x.number}
-              handleClick={handleNumberClick}
-            />
-          ))}
-        </div>
-        <div className="controlBtnDiv">
-          {controls.map((x) => (
-            <ControlButtons
-              key={x.id}
-              id={x.id}
-              text={x.control}
-              handleClick={handleControlClick}
-              operator={operator}
-            />
-          ))}
+    <div>
+      <form >
+        <input
+          type="button"
+          value="Home"
+          onClick={() => {
+            window.location.href='../../index.html'
+          }}
+          style={{
+            textAlign: "center",
+            margin: "5px",
+            width: 80,
+            fontSize: 20,
+            backgroundColor: "black",
+            color: "white",
+            borderRadius: 5,
+            border: "2px solid purple",
+          }}
+        />
+      </form>
+      <div className="outerLayer">
+        <Display display={display} />
+        <div className="allButtons">
+          <div className="numBtnDiv">
+            {numbers.map((x) => (
+              <Buttons
+                key={x.id}
+                id={x.id}
+                text={x.number}
+                handleClick={handleNumberClick}
+              />
+            ))}
+          </div>
+          <div className="controlBtnDiv">
+            {controls.map((x) => (
+              <ControlButtons
+                key={x.id}
+                id={x.id}
+                text={x.control}
+                handleClick={handleControlClick}
+                operator={operator}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
