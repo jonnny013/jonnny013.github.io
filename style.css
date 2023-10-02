@@ -72,6 +72,7 @@ main {
     width: auto;
     padding: 20px;
     font-size: 1.5rem;
+    background-color: gray;
 }
 
 footer{
@@ -146,12 +147,12 @@ float: right;
 /*only project boxes  below */
 
 
-.all-projects {
+/* .all-projects {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
        gap: 30px;
-}
+}  */
 
 .ind-projects {
     border: 1px solid black;
