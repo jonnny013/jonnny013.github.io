@@ -241,10 +241,7 @@ const App = () => {
 
   return (
     <div>
-      <form >
-        <input
-          type="button"
-          value="Home"
+        <button
           onClick={() => {
             window.location.href='../../index.html'
           }}
@@ -258,8 +255,7 @@ const App = () => {
             borderRadius: 5,
             border: "2px solid purple",
           }}
-        />
-      </form>
+        >Home</button>
       <div className="outerLayer">
         <Display display={display} />
         <div className="allButtons">

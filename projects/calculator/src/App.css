@@ -51,7 +51,9 @@
 }
 
 .numBtnDiv>* {
-  flex: 1 1 30%;
+  flex: 1 1 calc(33.33% - 10px);
+  font-size: 3rem;
+  color: black;
 }
 
 .controlBtnDiv {
@@ -66,10 +68,11 @@
   font-size: 2rem;
   width: 100%;
   height: 100%;
-  background-color: rgb(255, 166, 0);
   border-radius: 5px;
+    color: black;
 }
 
 .controlBtnDiv>* {
   flex: 1 1 100%;
+
 }
