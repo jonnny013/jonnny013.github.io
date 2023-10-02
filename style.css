@@ -72,7 +72,7 @@ main {
     width: auto;
     padding: 20px;
     font-size: 1.5rem;
-    background-color: gray;
+    background-color: rgb(194, 193, 193);
 }
 
 footer{
@@ -147,22 +147,19 @@ float: right;
 /*only project boxes  below */
 
 
-/* .all-projects {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-       gap: 30px;
-}  */
+.all-projects {
+    margin: auto
+}  
 
 .ind-projects {
     border: 1px solid black;
-    max-width: 300px;
+    max-width: 350px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
+    height: 400px;
     margin: 0;
 }
 
