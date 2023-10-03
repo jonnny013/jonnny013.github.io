@@ -252,13 +252,13 @@ h2 {
 }
 .ind-projects {
   border: 1px solid black;
-  min-width: 350px !important;
+  width: 350px ;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 450px;
+  height: 450px;
   margin: 0;
   color: black;
 }
@@ -356,5 +356,14 @@ h2 {
   }
   .ind-projects {
     min-width: 300px;
+    width: 300px;
+    height: 500px;
+  }
+  .swiper {
+    width: 300px;
+    height: 500px
+  }
+  #pageDescription {
+    display: none;
   }
 }
