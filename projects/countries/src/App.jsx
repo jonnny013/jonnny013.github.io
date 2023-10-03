@@ -12,10 +12,13 @@ const App = ({ countries }) => {
   const [search, setSearch] = useState("");
   const [weather, setWeather] = useState(null);
   const [place, setPlace] = useState("");
+  const [apiIsLoading, setApiIsLoading] = useState(true)
+  const [weatherIsAvailable, setWeatherIsAvailable] = useState(true)
 
   useEffect(() => {
     countryService.getAll().then((response) => {
       setCountry(response.data);
+      setApiIsLoading(false)
     });
   }, []);
 
@@ -25,7 +28,9 @@ const App = ({ countries }) => {
         `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${api_key}`
       )
       .then((response) => setWeather(response.data))
-      .catch((error) => console.log("URL undefined"));
+      .catch((error) => {console.log("URL undefined, API key not installed")
+        setWeatherIsAvailable(false)
+    });
   }, [place]);
 
   const handleSearch = (event) => {
@@ -65,6 +70,8 @@ const App = ({ countries }) => {
         place={place}
         setPlace={setPlace}
         weather={weather}
+        apiIsLoading={apiIsLoading}
+        weatherIsAvailable={weatherIsAvailable}
       />
     </div>
   );
