@@ -98,7 +98,7 @@ const App = () => {
     <>
       <Router>
         <div className="navBar">
-          <Link className="navLink1" to="/projects/moonfestival/">
+          <Link className="navLink1" to="/projects/moonfestival/index.html">
             {t("nav1")}{" "}
           </Link>
           <Link className="navLink" to="/projects/moonfestival/gamePage1">
