@@ -5,5 +5,5 @@ const arrowScrollLeft = () => {
 
 const arrowScrollRight = () => {
   let right = document.querySelector(".scroll-divs");
-  right.scrollBy(350, 0);
+  right.scrollBy(300, 0);
 };   
