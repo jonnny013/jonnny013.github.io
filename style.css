@@ -252,7 +252,7 @@ h2 {
 }
 .ind-projects {
   border: 1px solid black;
-  width: 350px ;
+  width: 450px ;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
