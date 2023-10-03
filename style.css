@@ -146,7 +146,9 @@ h2 {
 
 /*only project boxes  below */
 
-.all-projects {
+
+
+.all-projects  {
   width: 90%;
   height: 550px;
   display: flex;
@@ -154,7 +156,9 @@ h2 {
   justify-content: space-between;
 }
 
-.cover {
+
+
+/* .cover {
   position: relative;
   height: 100%;
   width: 80%;
@@ -170,9 +174,9 @@ h2 {
   align-items: center;
   position: relative;
   scroll-behavior: smooth;
-}
+} */
 
-.cover::before {
+/* .cover::before {
   position: absolute;
   content: "";
   left: 0;
@@ -185,9 +189,9 @@ h2 {
     var(--background-color2),
     transparent
   );
-}
+} */
 
-.cover::after {
+/* .cover::after {
   position: absolute;
   content: "";
   right: 0;
@@ -200,7 +204,7 @@ h2 {
     var(--background-color2),
     transparent
   );
-}
+} */
 
 .arrow-icon {
   color: var(--background-color1);
@@ -220,6 +224,32 @@ h2 {
   outline: none;
 }
 
+.swiper {
+  width: 450px;
+  height:450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-button-next {
+  right: -50px !important;
+}
+.swiper-button-prev {
+  left: -50px !important;
+}
+
+.swiper-pagination {
+  bottom: -30px !important;
+}
+
+.swiper-slide {
+  text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
 .ind-projects {
   border: 1px solid black;
   min-width: 350px !important;
@@ -228,8 +258,8 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 450px;
-  margin: 0 30px;
+  min-height: 450px;
+  margin: 0;
   color: black;
 }
 

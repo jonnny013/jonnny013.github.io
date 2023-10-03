@@ -73,16 +73,17 @@
 
     <main>
       <h2>My current projects</h2>
-      <div class="all-projects">
-        <div>
+      <div class="all-projects ">
+        <div class="swiper mySwiper">
+        <!-- <div>
           <button class="arrow-icon" onclick="arrowScrollLeft()">
             <i class="fas fa-angle-double-left"></i>
           </button>
-        </div>
-        <div class="cover">
-          <div class="scroll-divs">
+        </div> -->
+        <div class="swiper-wrapper">
 
-            <a class="project" href="/projects/odin-recipes/odin.html"></a>
+            <div class="swiper-slide">
+            <a class="project" href="/projects/odin-recipes/odin.html">
             <div class="ind-projects">
               <div class="project-title">
                 <h2>
@@ -110,7 +111,9 @@
               </div>
             </div>
             </a>
+            </div>
 
+            <div class="swiper-slide">
             <a class="project" href="/projects/learnChin/learnZW.html">
             <div class="ind-projects">
               <div class="project-title">
@@ -140,7 +143,9 @@
               </div>
             </div>
             </a>
+            </div>
 
+            <div class="swiper-slide">
             <a
                     class="project"
                     href="/projects/websiteDesignPage/servicesite.html"
@@ -173,7 +178,10 @@
               </div>
             </div>
             </a>
+            </div>
 
+
+            <div class="swiper-slide">
             <a class="project" href="projects/paperScissors/paperScissorsStone.html">
             <div class="ind-projects">
               <div class="project-title">
@@ -210,7 +218,9 @@
               </div>
             </div>
             </a>
+            </div>
 
+            <div class="swiper-slide">
             <a class="project" href="projects/etch-a-sketch/index.html">
             <div class="ind-projects">
               <div class="project-title">
@@ -237,7 +247,9 @@
               </div>
             </div>
             </a>
+            </div>  
 
+            <div class="swiper-slide">
             <a class="project" href="projects/calculator/index.html">
             <div class="ind-projects">
               <div class="project-title">
@@ -261,7 +273,9 @@
               </div>
             </div>
             </a>
+            </div>
 
+            <div class="swiper-slide">
           <a class="project" href="projects/windowPage/windowPage/index.html">
             <div class="ind-projects">
               <div class="project-title">
@@ -286,7 +300,9 @@
               </div>
             </div>
              </a>
+            </div>
 
+            <div class="swiper-slide">
              <a class="project" href="./projects/moonfestival/index.html">
             <div class="ind-projects">
               <div class="project-title">
@@ -312,7 +328,9 @@
               </div>
             </div>
             </a>
+            </div>
 
+            <div class="swiper-slide">
             <a class="project" href="./projects/countries/index.html">
             <div class="ind-projects">
               <div class="project-title">
@@ -336,15 +354,21 @@
               </div>
             </div>
             </a>
+            </div>
 
-          </div>
-        </div>
-        <div>
+        <!-- <div>
           <button class="arrow-icon" onclick="arrowScrollRight()">
             <i class="fas fa-angle-double-right"></i>
           </button>
-        </div>
+        </div> -->
+         </div>
 
+        <div class="swiper-pagination"></div>
+
+         <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+       
+      </div>
         <!-- <div class="ind-projects">
           <div class="project-title">
             <h2>
@@ -438,5 +462,26 @@
       <p>Page made my Jon Love 2023</p>
     </footer>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "cube",
+      grabCursor: true,
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
   </body>
 </html>
