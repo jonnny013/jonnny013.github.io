@@ -21,27 +21,26 @@
       src="https://kit.fontawesome.com/3c5e972b1e.js"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js" defer></script>
   </head>
 
   <body>
     <header>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-sm-2 justify-content-left">
-            <img class="logo" src="/photos/mainLogo.png" alt="logo" />
-          </div>
-          <div class="col-sm-8">
-            <h1 class="header">Jon Love's Portfolio</h1>
-            <p class="header">
-              This website is dedicated to putting my projects in one place
-            </p>
-          </div>
+      <div class="row container d-flex justify-content-center">
+        <div class="col-sm-2">
+          <img class="logo" src="/photos/mainLogo.png" alt="logo" />
+        </div>
+        <div class="col-sm-10 justify-content-center align-items-center">
+          <h1 class="header">Jon Love's Portfolio</h1>
+          <p class="header">
+            This website is dedicated to putting my projects in one place
+          </p>
         </div>
       </div>
       <nav>
         <div class="container" id="header-link">
           <div class="row">
-            <div class="col-sm-2 social-icons">
+            <div class="col-xs col-sm social-icons">
               <a
                 target="_blank"
                 href="https://instagram.com/jonloveprogramming?igshid=OGQ5ZDc2ODk2ZA=="
@@ -59,362 +58,301 @@
               </a>
             </div>
 
-            <div class="col-xs-4 col-sm-3">
+            <div class="col-xs col-sm col-md">
               <a class="nav-link" href="index.html">Home</a>
             </div>
-            <div class="col-xs-4 col-sm-3">
+            <div class="col-xs col-sm col-md">
               <a class="nav-link" href="aboutme.html">About Me</a>
             </div>
-            <div class="col-xs-4 col-sm-3 align-self-end">
+            <div class="col-xs col-sm col-md">
               <a class="nav-link" href="contact.html">Contact</a>
             </div>
           </div>
         </div>
       </nav>
     </header>
+
+
+
+
     <main>
       <h2>My current projects</h2>
-      <div class="all-projects w-50">
-        <div
-          id="carouselDarkVariant"
-          class="carousel slide carousel-dark"
-          data-ride="carousel"
-        >
-          <ol class="carousel-indicators">
-            <li
-              data-target="#carouselDarkVariant"
-              data-slide-to="0"
-              class="active"
-            ></li>
-            <li data-target="#carouselDarkVariant" data-slide-to="1"></li>
-            <li data-target="#carouselDarkVariant" data-slide-to="2"></li>
-            <li data-target="#carouselDarkVariant" data-slide-to="3"></li>
-            <li data-target="#carouselDarkVariant" data-slide-to="4"></li>
-            <li data-target="#carouselDarkVariant" data-slide-to="5"></li>
-            <li data-target="#carouselDarkVariant" data-slide-to="6"></li>
-            <li data-target="#carouselDarkVariant" data-slide-to="7"></li>
-          </ol>
-          <div class="carousel-inner mx-auto">
-            <div class="carousel-item active">
-              <div class="ind-projects d-block w-100">
-                <div class="project-title">
-                  <h2>
-                    <a class="project" href="/projects/odin-recipes/odin.html"
-                      >Recipe Site</a
-                    >
-                  </h2>
-                </div>
-                <h3 class="projectName">CSS practice</h3>
-                <p>
-                  This projecy was made by following along to the Odin Project.
-                  Although the page is simple, I took the chance to indulge on
-                  the empty space to practice my CSS skills.
-                </p>
-                <div class="project-focus">
-                  <p>Main focus:</p>
-                  <div class="icons">
-                    <div class="html-icon">
-                      <p>HTML</p>
-                      <i class="fa-brands fa-html5" style="color: #ff4013"></i>
-                    </div>
-                    <div class="css-icon">
-                      <p>CSS</p>
-                      <i
-                        class="fa-brands fa-css3-alt"
-                        style="color: #0061ff"
-                      ></i>
-                    </div>
+      <div class="all-projects">
+        <div>
+          <button class="arrow-icon" onclick="arrowScrollLeft()">
+            <i class="fas fa-angle-double-left"></i>
+          </button>
+        </div>
+
+
+        <div class="cover">
+          <div class="scroll-divs">
+            <div class="ind-projects">
+              <div class="project-title">
+                <h2>
+                  <a class="project" href="/projects/odin-recipes/odin.html"
+                    >Recipe Site</a
+                  >
+                </h2>
+              </div>
+              <h3 class="projectName">CSS practice</h3>
+              <p>
+                This projecy was made by following along to the Odin Project.
+                Although the page is simple, I took the chance to indulge on the
+                empty space to practice my CSS skills.
+              </p>
+              <div class="project-focus">
+                <p>Main focus:</p>
+                <div class="icons">
+                  <div class="html-icon">
+                    <p>HTML</p>
+                    <i class="fa-brands fa-html5" style="color: #ff4013"></i>
+                  </div>
+                  <div class="css-icon">
+                    <p>CSS</p>
+                    <i class="fa-brands fa-css3-alt" style="color: #0061ff"></i>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="carousel-item">
-              <div class="ind-projects d-block w-100">
-                <div class="project-title">
-                  <h2>
-                    <a class="project" href="/projects/learnChin/learnZW.html"
-                      >How to Learn Chinese</a
-                    >
-                  </h2>
-                </div>
-                <h3 class="projectName">Content for reference</h3>
-                <p>
-                  My fifth project was the third FreeCodeCamp certification
-                  project, however I took my own apporach to it. As I wrote the
-                  content, I was reflecting on how I should continue my learning
-                  and use these methods in programming.
-                </p>
-                <div class="project-focus">
-                  <p>Main focus:</p>
-                  <div class="icons">
-                    <div class="html-icon">
-                      <p>HTML</p>
-                      <i class="fa-brands fa-html5" style="color: #ff4013"></i>
-                    </div>
-                    <div class="css-icon">
-                      <p>CSS</p>
-                      <i
-                        class="fa-brands fa-css3-alt"
-                        style="color: #0061ff"
-                      ></i>
-                    </div>
+            <div class="ind-projects">
+              <div class="project-title">
+                <h2>
+                  <a class="project" href="/projects/learnChin/learnZW.html">
+                    How to Learn Chinese
+                  </a>
+                </h2>
+              </div>
+              <h3 class="projectName">Content for reference</h3>
+              <p>
+                My fifth project was the third FreeCodeCamp certification
+                project, however I took my own apporach to it. As I wrote the
+                content, I was reflecting on how I should continue my learning
+                and use these methods in programming.
+              </p>
+              <div class="project-focus">
+                <p>Main focus:</p>
+                <div class="icons">
+                  <div class="html-icon">
+                    <p>HTML</p>
+                    <i class="fa-brands fa-html5" style="color: #ff4013"></i>
+                  </div>
+                  <div class="css-icon">
+                    <p>CSS</p>
+                    <i class="fa-brands fa-css3-alt" style="color: #0061ff"></i>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="carousel-item">
-              <div class="ind-projects d-block w-100">
-                <div class="project-title">
-                  <h2>
-                    <a
-                      class="project"
-                      href="/projects/websiteDesignPage/servicesite.html"
-                      >Business Website</a
-                    >
-                  </h2>
-                </div>
-                <h3 class="projectName">Responsive design</h3>
-                <p>
-                  My sixth project was the fourth FreeCodeCamp certification
-                  project. I focused on media queries on this one. I did my best
-                  to make sure the wesbite was responsive in a functional way
-                  that is user friendly regardless of device size.
-                </p>
-                <div class="project-focus">
-                  <p>Main focus:</p>
-                  <div class="icons">
-                    <div class="html-icon">
-                      <p>HTML</p>
-                      <i class="fa-brands fa-html5" style="color: #ff4013"></i>
-                    </div>
-                    <div class="css-icon">
-                      <p>CSS</p>
-                      <i
-                        class="fa-brands fa-css3-alt"
-                        style="color: #0061ff"
-                      ></i>
-                    </div>
+            <div class="ind-projects">
+              <div class="project-title">
+                <h2>
+                  <a
+                    class="project"
+                    href="/projects/websiteDesignPage/servicesite.html"
+                  >
+                    Business Website
+                  </a>
+                </h2>
+              </div>
+              <h3 class="projectName">Responsive design</h3>
+              <p>
+                My sixth project was the fourth FreeCodeCamp certification
+                project. I focused on media queries on this one. I did my best
+                to make sure the wesbite was responsive in a functional way that
+                is user friendly regardless of device size.
+              </p>
+              <div class="project-focus">
+                <p>Main focus:</p>
+                <div class="icons">
+                  <div class="html-icon">
+                    <p>HTML</p>
+                    <i class="fa-brands fa-html5" style="color: #ff4013"></i>
+                  </div>
+                  <div class="css-icon">
+                    <p>CSS</p>
+                    <i class="fa-brands fa-css3-alt" style="color: #0061ff"></i>
                   </div>
                 </div>
               </div>
             </div>
 
-              <div class="carousel-item">
-                <div class="ind-projects d-block w-100">
-                  <div class="project-title">
-                    <h2>
-                      <a
-                        class="project"
-                        href="projects/paperScissors/paperScissorsStone.html"
-                        >Rock, Paper, Scissors</a
-                      >
-                    </h2>
+            <div class="ind-projects">
+              <div class="project-title">
+                <h2>
+                  <a
+                    class="project"
+                    href="projects/paperScissors/paperScissorsStone.html"
+                  >
+                    Rock, Paper, Scissors
+                  </a>
+                </h2>
+              </div>
+              <h3 class="projectName">Vanilla Javascript</h3>
+              <p>
+                My seventh project is from TheOdinProject. I focused on basic
+                Javascript. Although the javascript isn't complex, it was my
+                first time connecting Javascript to HTML which started as a
+                challenge but got easy quickly. I also used Bootstrap for extra
+                practice.
+              </p>
+              <div class="project-focus">
+                <p>Main focus:</p>
+                <div class="icons">
+                  <div class="js-icon">
+                    <p>Javascript</p>
+                    <i
+                      class="fa-brands fa-square-js"
+                      style="color: #f0db4f"
+                    ></i>
                   </div>
-                  <h3 class="projectName">Vanilla Javascript</h3>
-                  <p>
-                    My seventh project is from TheOdinProject. I focused on
-                    basic Javascript. Although the javascript isn't complex, it
-                    was my first time connecting Javascript to HTML which
-                    started as a challenge but got easy quickly. I also used
-                    Bootstrap for extra practice.
-                  </p>
-                  <div class="project-focus">
-                    <p>Main focus:</p>
-                    <div class="icons">
-                      <div class="js-icon">
-                        <p>Javascript</p>
-                        <i
-                          class="fa-brands fa-square-js"
-                          style="color: #f0db4f"
-                        ></i>
-                      </div>
-                      <div class="boostrap-icon">
-                        <p>Bootstrap</p>
-                        <i
-                          class="fa-brands fa-bootstrap"
-                          style="color: #563d7c"
-                        ></i>
-                      </div>
-                    </div>
+                  <div class="boostrap-icon">
+                    <p>Bootstrap</p>
+                    <i
+                      class="fa-brands fa-bootstrap"
+                      style="color: #563d7c"
+                    ></i>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="carousel-item">
-                <div class="ind-projects d-block w-100">
-                  <div class="project-title">
-                    <h2>
-                      <a
-                        class="project"
-                        href="projects/etch-a-sketch/index.html"
-                        >Etch a Sketch</a
-                      >
-                    </h2>
-                  </div>
-                  <h3 class="projectName">Vanilla Javascript</h3>
-                  <p>
-                    My eighth project is from TheOdinProject. I focused on
-                    simple Javascript for some extra practice.
-                  </p>
-                  <div class="project-focus">
-                    <p>Main focus:</p>
-                    <div class="icons">
-                      <div class="js-icon">
-                        <p>Javascript</p>
-                        <i
-                          class="fa-brands fa-square-js"
-                          style="color: #f0db4f"
-                        ></i>
-                      </div>
-                    </div>
+            <div class="ind-projects">
+              <div class="project-title">
+                <h2>
+                  <a class="project" href="projects/etch-a-sketch/index.html">
+                    Etch a Sketch
+                  </a>
+                </h2>
+              </div>
+              <h3 class="projectName">Vanilla Javascript</h3>
+              <p>
+                My eighth project is from TheOdinProject. I focused on simple
+                Javascript for some extra practice.
+              </p>
+              <div class="project-focus">
+                <p>Main focus:</p>
+                <div class="icons">
+                  <div class="js-icon">
+                    <p>Javascript</p>
+                    <i
+                      class="fa-brands fa-square-js"
+                      style="color: #f0db4f"
+                    ></i>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="carousel-item">
-                <div class="ind-projects d-block w-100">
-                  <div class="project-title">
-                    <h2>
-                      <a class="project" href="projects/calculator/index.html"
-                        >Calculator</a
-                      >
-                    </h2>
-                  </div>
-                  <h3 class="projectName">JS algorithm practice</h3>
-                  <p>
-                    Another project from TheOdinProject. I focus on using react
-                    to achieve the standard calculator project.
-                  </p>
-                  <div class="project-focus">
-                    <p>Main focus:</p>
-                    <div class="icons">
-                      <div class="js-icon">
-                        <p>React</p>
-                        <i
-                          class="fa-brands fa-react"
-                          style="color: #61dbfb"
-                        ></i>
-                      </div>
-                    </div>
+            <div class="ind-projects">
+              <div class="project-title">
+                <h2>
+                  <a class="project" href="projects/calculator/index.html">
+                    Calculator
+                  </a>
+                </h2>
+              </div>
+              <h3 class="projectName">JS algorithm practice</h3>
+              <p>
+                Another project from TheOdinProject. I focus on using react to
+                achieve the standard calculator project.
+              </p>
+              <div class="project-focus">
+                <p>Main focus:</p>
+                <div class="icons">
+                  <div class="js-icon">
+                    <p>React</p>
+                    <i class="fa-brands fa-react" style="color: #61dbfb"></i>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="carousel-item">
-                <div class="ind-projects d-block w-100">
-                  <div class="project-title">
-                    <h2>
-                      <a
-                        class="project"
-                        href="projects/windowPage/windowPage/index.html"
-                        >Desktop</a
-                      >
-                    </h2>
-                  </div>
-                  <h3 class="projectName">React Practice</h3>
-                  <p>
-                    I wanted to get more practice with user input so I thought
-                    of this project to get my hands dirty. (This project is
-                    under construction and on-going)
-                  </p>
-                  <div class="project-focus">
-                    <p>Main focus:</p>
-                    <div class="icons">
-                      <div class="js-icon">
-                        <p>React</p>
-                        <i
-                          class="fa-brands fa-react"
-                          style="color: #61dbfb"
-                        ></i>
-                      </div>
-                    </div>
+            <div class="ind-projects">
+              <div class="project-title">
+                <h2>
+                  <a
+                    class="project"
+                    href="projects/windowPage/windowPage/index.html"
+                  >
+                    Desktop
+                  </a>
+                </h2>
+              </div>
+              <h3 class="projectName">React Practice</h3>
+              <p>
+                I wanted to get more practice with user input so I thought of
+                this project to get my hands dirty. (This project is under
+                construction and on-going)
+              </p>
+              <div class="project-focus">
+                <p>Main focus:</p>
+                <div class="icons">
+                  <div class="js-icon">
+                    <p>React</p>
+                    <i class="fa-brands fa-react" style="color: #61dbfb"></i>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="carousel-item">
-                <div class="ind-projects d-block w-100">
-                  <div class="project-title">
-                    <h2>
-                      <a
-                        class="project"
-                        href="./projects/moonfestival/index.html"
-                        >Festival Quiz</a
-                      >
-                    </h2>
-                  </div>
-                  <h3 class="projectName">React Practice</h3>
-                  <p>
-                    I made a project that fits the holiday of the mid autumn
-                    festival. I implemented new practices such as translation
-                    files and Routes within react. I got a better understanding
-                    for useEffect and why it is important as well.
-                  </p>
-                  <div class="project-focus">
-                    <p>Main focus:</p>
-                    <div class="icons">
-                      <div class="js-icon">
-                        <p>React</p>
-                        <i
-                          class="fa-brands fa-react"
-                          style="color: #61dbfb"
-                        ></i>
-                      </div>
-                    </div>
+            <div class="ind-projects">
+              <div class="project-title">
+                <h2>
+                  <a class="project" href="./projects/moonfestival/index.html">
+                    Festival Quiz
+                  </a>
+                </h2>
+              </div>
+              <h3 class="projectName">React Practice</h3>
+              <p>
+                I made a project that fits the holiday of the mid autumn
+                festival. I implemented new practices such as translation files
+                and Routes within react. I got a better understanding for
+                useEffect and why it is important as well.
+              </p>
+              <div class="project-focus">
+                <p>Main focus:</p>
+                <div class="icons">
+                  <div class="js-icon">
+                    <p>React</p>
+                    <i class="fa-brands fa-react" style="color: #61dbfb"></i>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="carousel-item">
-                <div class="ind-projects d-block w-100">
-                  <div class="project-title">
-                    <h2>
-                      <a class="project" href="./projects/countries/index.html"
-                        >Country Search</a
-                      >
-                    </h2>
-                  </div>
-                  <h3 class="projectName">API practice</h3>
-                  <p>
-                    This is an optional project from the Full Stack Open course.
-                    The main focus is to make use of APIs.
-                  </p>
-                  <div class="project-focus">
-                    <p>Main focus:</p>
-                    <div class="icons">
-                      <div class="js-icon">
-                        <p>React</p>
-                        <i
-                          class="fa-brands fa-react"
-                          style="color: #61dbfb"
-                        ></i>
-                      </div>
-                    </div>
+            <div class="ind-projects">
+              <div class="project-title">
+                <h2>
+                  <a class="project" href="./projects/countries/index.html">
+                    Country Search
+                  </a>
+                </h2>
+              </div>
+              <h3 class="projectName">API practice</h3>
+              <p>
+                This is an optional project from the Full Stack Open course. The
+                main focus is to make use of APIs.
+              </p>
+              <div class="project-focus">
+                <p>Main focus:</p>
+                <div class="icons">
+                  <div class="js-icon">
+                    <p>React</p>
+                    <i class="fa-brands fa-react" style="color: #61dbfb"></i>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <a
-            class="carousel-control-prev"
-            href="#carouselDarkVariant"
-            role="button"
-            data-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            href="#carouselDarkVariant"
-            role="button"
-            data-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+        </div>
+        <div>
+          <button class="arrow-icon" onclick="arrowScrollRight()">
+            <i class="fas fa-angle-double-right"></i>
+          </button>
         </div>
 
         <!-- <div class="ind-projects">
