@@ -1,328 +1,328 @@
 :root {
-    --my-gradient: linear-gradient(to right, #765D23,#D6C591, #654D21);
-    --background-color1: linear-gradient(to right, #2c230c,#372b2b, #2a2a28);
-    --background-color2: white;
+  --my-gradient: linear-gradient(to right, #765d23, #d6c591, #654d21);
+  --background-color1: linear-gradient(to right, #2c230c, #372b2b, #2a2a28);
+  --background-color2: white;
 }
 
-.gohomebutton {border: 0;
-    margin: 5px 0 0 20px;
-    width: 60px;
-    }
-    
-    .gohome {width: 80px;
-        font-size: 20px;
-        background-color: black;
-        color: white;
-        border-radius: 5px;
-        border: 2px solid purple;
-    }
+a:hover {
+  font-size: 120%;
+  transition: font-size 0.3s ease-in-out;
+  transform: scale(1.1);
+  transition: transform 0.3 ease-in-out;
+  text-decoration: none;
+  color: inherit;
+}
 
-    html {
-        margin: 0;
-        font-size: 10px;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
+html {
+  margin: 0;
+  font-size: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
 
-    body {
-        display:flex;
-        flex-direction: column;
-        min-height: 100vh;
-        margin: 0;
-    }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
 
 header {
-    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-    align-items: center;
-    font-size: 2.0rem !important;
-    margin: 0;
-    color: white;
-    background: var(--my-gradient, gold);
-    width: 100%;
-    text-align: center;
-    padding: 0;
-    letter-spacing: 1px;;
-    }
-
-.nav-link {
-    color: white;
-    text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+  align-items: center;
+  font-size: 2rem !important;
+  margin: 0;
+  color: white;
+  background: var(--my-gradient, gold);
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  letter-spacing: 1px;
 }
 
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+
 .nav-link:visited {
-    color: white;
+  color: white;
 }
 
 #header-link {
-    font-size: 3rem;
-    gap: 50px;
-    margin: auto;
-    padding: 10px;
-    width: auto;
-    
+  font-size: 3rem;
+  gap: 50px;
+  margin: auto;
+  padding: 10px;
+  width: auto;
 }
 
 nav {
-     background: var(--background-color1);
-     width: 100%;
+  background: var(--background-color1);
+  width: 100%;
 }
 
 main {
-    flex: 1;
-    height: auto;
-    margin: 0;
-    width: auto;
-    padding: 20px;
-    font-size: 1.5rem;
-    background-color: var(--background-color2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  height: auto;
+  margin: 0;
+  width: auto;
+  padding: 20px;
+  font-size: 1.5rem;
+  background-color: var(--background-color2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-footer{
-    
-    bottom: 0;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.4rem;
-    max-height: 50px;
-    background: var(--background-color1);
-    color: white;
-    gap: 30px;
+footer {
+  bottom: 0;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  max-height: 50px;
+  background: var(--background-color1);
+  color: white;
+  gap: 30px;
 }
 .social-icons {
-    color: linen;
-    margin-left: 25px;
-    font-size: 30px;
-    }
+  color: linen;
+  margin-left: 25px;
+  font-size: 30px;
+}
 
-  .social-icons a {
-    text-decoration: none;
-    color: linen;
-    
-  }
+.social-icons a {
+  text-decoration: none;
+  color: linen;
+}
 
-  .social-icons a:visited {
-    color: linen;
-  }
+.social-icons a:visited {
+  color: linen;
+}
 
 .logo {
-    width: 75px;
-    height: auto;
-    margin: auto;
+  width: 100px;
+  height: auto;
+  margin: 0;
 }
 
 h2 {
-    text-align: center;
-    font-size: 3rem;
+  text-align: center;
+  font-size: 3rem;
 }
 
 .contactList {
-    font-size: 2rem;
-    width: 600px;
-    height: 300px;
-    display: flex;
-    margin: auto;
-
+  font-size: 2rem;
+  width: 600px;
+  height: 300px;
+  display: flex;
+  margin: auto;
 }
 
 .contactList ul {
-    width: 550px;
+  width: 550px;
 }
 
 .contactList li {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 
 .contactList span {
-justify-content: flex-end;
-align-items: flex-end;
-float: right;
+  justify-content: flex-end;
+  align-items: flex-end;
+  float: right;
 }
 
 .certificates {
-    width: auto;
-    height: auto;
+  width: auto;
+  height: auto;
 }
 
 /*only project boxes  below */
 
-
 .all-projects {
-    width: 90%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}  
+  width: 90%;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .cover {
-    position: relative;
-    height: 100%;
-    width: 80%;
-        border-radius: 8px;
+  position: relative;
+  height: 100%;
+  width: 80%;
+  border-radius: 8px;
 }
 
 .scroll-divs {
-    overflow: scroll;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    position: relative;
-    scroll-behavior:smooth;
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+  scroll-behavior: smooth;
 }
 
 .cover::before {
-    position: absolute;
-    content: "";
-    left: 0;
-    top: 0;
-    z-index: 99;
-    height: 100%;
-    width: 150px;
-    background-image: linear-gradient(90deg, var(--background-color2), transparent);
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  z-index: 99;
+  height: 100%;
+  width: 150px;
+  background-image: linear-gradient(
+    90deg,
+    var(--background-color2),
+    transparent
+  );
 }
 
 .cover::after {
-    position: absolute;
-    content: "";
-    right: 0;
-    top: 0;
-    z-index: 99;
-    height: 100%;
-    width: 150px;
-    background-image: linear-gradient(270deg, var(--background-color2), transparent);
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  z-index: 99;
+  height: 100%;
+  width: 150px;
+  background-image: linear-gradient(
+    270deg,
+    var(--background-color2),
+    transparent
+  );
 }
 
-.arrow-icon{
-    color:var(--background-color1);
-    background-color: var(--background-color2);
-    font-size: 50px;
-    outline: none;
-    border: none;
-    padding: 0px 20px;
-    cursor: pointer;
+.arrow-icon {
+  color: var(--background-color1);
+  background-color: var(--background-color2);
+  font-size: 50px;
+  outline: none;
+  border: none;
+  padding: 0px 20px;
 }
 
 .arrow-icon:hover {
-    font-size: 60px;
-
+  font-size: 60px;
 }
 
 .arrow-icon:focus {
-    border: none;
-        outline: none;
+  border: none;
+  outline: none;
 }
 
 .ind-projects {
-    border: 1px solid black;
-    min-width: 350px !important;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 450px;
-    margin: 0 30px;
-    cursor: pointer;
+  border: 1px solid black;
+  min-width: 350px !important;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  margin: 0 30px;
+  color: black;
 }
 
 .ind-projects::-webkit-scrollbar {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 .project-title {
-    text-align: center;
-    background:  var(--my-gradient);
-    align-self: flex-start;
-    width: 100%;
-    font-family:'Times New Roman', Times, serif;
-    color: black;
-    margin: 0;
-    border-radius: 8px 8px 0 0;
-    
+  text-align: center;
+  background: var(--my-gradient);
+  align-self: flex-start;
+  width: 100%;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+  margin: 0;
+  border-radius: 8px 8px 0 0;
 }
 
 .project-title a {
-    text-decoration: underline;
-    color: black;
+  text-decoration: underline;
+  color: black;
 }
 
 .project-title a:visited {
-    color: black;
+  color: black;
 }
 
 .ind-projects p {
-    padding: 15px;
-    margin: 0;
-    font-weight: 500;
-    font-size: 1.7rem;
-    flex: 1;
+  padding: 15px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.7rem;
+  flex: 1;
 }
 
 .ind-projects .project-focus p {
-    font-weight: 600;
-    flex: 1;
-    margin: auto;
-    text-align: center;
+  font-weight: 600;
+  flex: 1;
+  margin: auto;
+  text-align: center;
 }
 
 .icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    height: auto;
-    flex: 1;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: auto;
+  flex: 1;
+  text-align: center;
 }
-.icons i{
-    font-size: 4rem;
+.icons i {
+  font-size: 4rem;
 }
 
-
-.html-icon, .css-icon, .js-icon, .bootstrap-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: auto;
-    padding: 2px;
-
+.html-icon,
+.css-icon,
+.js-icon,
+.bootstrap-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  padding: 2px;
 }
 
 .ind-projects .icons p {
-    padding: 0;
+  padding: 0;
 }
 
 /*Mobile device sizing */
 
 @media only screen and (max-width: 480px) {
-    #header-link{
-        font-size: 1.7rem;
-    }
+  #header-link {
+    font-size: 1.7rem;
+  }
 }
 
 @media only screen and (max-width: 680px) {
-    .cover::before, .cover::after{
-        width: 50px;
-    }
-    .arrow-icon {
-        padding: 0px;
-        font-size: 30px;
-    }
-    .arrow-icon:hover {
-        font-size: 40px;
-    }
-    .all-projects {
-        width: 100%;
-    }
-    .ind-projects {
-        min-width: 300px;
-    }
+  .cover::before,
+  .cover::after {
+    width: 50px;
+  }
+  .arrow-icon {
+    padding: 0px;
+    font-size: 30px;
+  }
+  .arrow-icon:hover {
+    font-size: 40px;
+  }
+  .all-projects {
+    width: 100%;
+  }
+  .ind-projects {
+    min-width: 300px;
+  }
 }
