@@ -144,7 +144,7 @@ const App = () => {
             }
           />
           <Route
-            path="/projects/moonfestival/"
+            path="/projects/moonfestival/index.html"
             element={<WelcomePage toggleSound={toggleSound} />}
           />
           <Route
