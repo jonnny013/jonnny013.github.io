@@ -120,7 +120,8 @@ html {
     background-color: black;
     color: white;
     border-radius: 5px;
-    border: 2px solid purple
+    border: 2px solid purple;
+    text-align: center;
   }
 
 .breakPoint {
@@ -128,9 +129,10 @@ html {
   background-color: aliceblue;
 }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 600px) {
     #navbar, #main-doc, .text-center, .gohomebutton{
       position: relative;
       margin: auto;
+      width: 100%;
     }
   } 
