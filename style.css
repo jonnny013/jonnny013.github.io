@@ -292,6 +292,11 @@ h2 {
   color: black;
 }
 
+#mern-long-paragraph {
+  font-size: 1.5rem;
+  padding: 8px;
+}
+
 .ind-projects p {
   padding: 15px;
   margin: 0;
@@ -323,7 +328,8 @@ h2 {
 .html-icon,
 .css-icon,
 .js-icon,
-.bootstrap-icon {
+.bootstrap-icon,
+.mern-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -335,6 +341,13 @@ h2 {
 .ind-projects .icons p {
   padding: 0;
 }
+
+#express-logo {
+  font-family: roboto;
+  font-size: 3rem;
+}
+
+
 
 /*Mobile device sizing */
 
@@ -370,5 +383,14 @@ h2 {
   }
   #pageDescription {
     display: none;
+  }
+  .icons {
+    gap: 5px;
+  }
+  .ind-projects p {
+    padding: 5px;
+  }
+  #express-logo{
+    font-size: 2.8rem;
   }
 }
