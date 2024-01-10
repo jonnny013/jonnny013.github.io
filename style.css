@@ -158,53 +158,6 @@ h2 {
 
 
 
-/* .cover {
-  position: relative;
-  height: 100%;
-  width: 80%;
-  border-radius: 8px;
-}
-
-.scroll-divs {
-  overflow: scroll;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  position: relative;
-  scroll-behavior: smooth;
-} */
-
-/* .cover::before {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  z-index: 99;
-  height: 100%;
-  width: 150px;
-  background-image: linear-gradient(
-    90deg,
-    var(--background-color2),
-    transparent
-  );
-} */
-
-/* .cover::after {
-  position: absolute;
-  content: "";
-  right: 0;
-  top: 0;
-  z-index: 99;
-  height: 100%;
-  width: 150px;
-  background-image: linear-gradient(
-    270deg,
-    var(--background-color2),
-    transparent
-  );
-} */
 
 .arrow-icon {
   color: var(--background-color1);
